@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: lightblue;
+	background-color: lightblue;
 }
 
 body {
@@ -61,14 +61,14 @@ body {
 	width: 350px;
 	height: 50px;
 	border-radius: 15px;
-  	border: 2px solid #000000;
+	border: 2px solid #000000;
 }
 
 .search-container #search-button {
 	height: 50px;
 	width: 75px;
 	border-radius: 15px;
-  	border: 2px solid #000000;
+	border: 2px solid #000000;
 }
 
 .logo {
@@ -77,7 +77,6 @@ body {
 	font-size: 50px;
 	font-weight: bold;
 }
-
 </style>
 </head>
 <body>
@@ -86,15 +85,16 @@ body {
 		<a class="active" href="#home">Home</a> <a href="#about">About</a> <a
 			href="#contact">Contact</a>
 	</div>
-	
+
 	<div class="logo">
 		<p>FlightCatch</p>
 	</div>
 
 	<div class="search-container">
 		<form action="/action_page.php">
-			<input id="search-bar" type="text" placeholder="Search.." name="search">
-			<button id= "search-button" type="submit">
+			<input id="search-bar" type="text" placeholder="Search.."
+				name="search">
+			<button id="search-button" type="submit">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
