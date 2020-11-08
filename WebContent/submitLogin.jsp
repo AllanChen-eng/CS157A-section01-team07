@@ -13,26 +13,30 @@
 			java.sql.Connection con; 
 			Class.forName("com.mysql.jdbc.Driver"); 
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cs157a", "root", "password"); 
-			out.println(db+ " database successfully opened."); 
-			Statement stmt=con.createStatement();
 			
 			
-			String username = request.getParameter("usernamen");
+			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 
-			ResultSet rs = stmt.executeQuery("select * from cs157aproject.users where username = '" + username + "' and password = '" + password + "';");
+			PreparedStatement prepStmt = con.prepareStatement("SELECT * FROM cs157aproject.users WHERE username = ? AND password = ?");
+			prepStmt.setString(1, username);
+			prepStmt.setString(2, password);
+
+			ResultSet rs = prepStmt.executeQuery();
+
 			if (rs.next()) {
 				String redirectURL = "http://localhost:8080/CS157A-section01-team07/index.jsp";
+				response.sendRedirect(redirectURL);
 			} 
 			else {
-				out.println("Invalid login");
+				String redirectURL = "http://localhost:8080/CS157A-section01-team07/login.jsp";
+				response.sendRedirect(redirectURL);
 			}
 			
 			con.close();
 			
-			String redirectURL = "http://localhost:8080/CS157A-section01-team07/index.jsp";
-			// response.setHeader("Location", "http://localhost:8080/cs157a_hw1/hw1.jsp");
-		    response.sendRedirect(redirectURL);
+			// username = test password = test
+		    
 		} catch(SQLException e) { 
 			out.println("SQLExceptioncaught: " +e.getMessage()); 
 		} 
