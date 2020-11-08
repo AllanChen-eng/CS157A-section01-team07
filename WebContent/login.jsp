@@ -142,17 +142,18 @@ span.psw {
 	</div>
 
 	<div class="container">
+		<form action = "submitLogin.jsp" method = POST>
 		<label for="uname"><b>Username</b></label>
 		<div>
-			<input id="usernameBar" type="text" placeholder="Enter Username" name="uname" required>
+			<input id="usernameBar" type="text" placeholder="Enter Username" name="username" required>
 		</div>
 		<div>
 			<label for="psw"><b>Password</b></label>
 			<div>
-				<input id="passwordBar" type="password" placeholder="Enter Password" name="psw"
+				<input id="passwordBar" type="password" placeholder="Enter Password" name="password"
 					required>
 			</div>
-			<button type="submit">
+			<button type="submit" value = "Submit">
 				Login
 			</button>
 			<div>
@@ -161,7 +162,9 @@ span.psw {
 				</label>
 			</div>
 		</div>
+		</form>
 	</div>
+		
 	
 	<div class="container" style="background-color: lightblue">
 		<span class="psw">Forgot <a href="#">password?</a></span>
