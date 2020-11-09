@@ -29,8 +29,8 @@
 				response.sendRedirect(redirectURL);
 			} 
 			else {
-				String redirectURL = "http://localhost:8080/CS157A-section01-team07/login.jsp";
-				response.sendRedirect(redirectURL);
+				request.setAttribute("error", "Invalid login");
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
 			
 			con.close();
