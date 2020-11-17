@@ -129,7 +129,7 @@ span.psw {
 </head>
 <body>
 	<div class="topnav">
-		<a class="active" href="#home">Home</a> <a href="#about">About</a> <a
+		<a class="active" href="login.jsp">Home</a> <a href="#about">About</a> <a
 			href="#contact">Contact</a>
 	</div>
 	
@@ -140,16 +140,17 @@ span.psw {
 	<div class="imgcontainer">
 		<img src="plane.jpg" alt="Avatar" class="avatar">
 	</div>
-
+	
+	<form action= "<%= request.getContextPath() %>/login" method="post">
 	<div class="container">
-		<label for="uname"><b>Username</b></label>
+		<label for="username"><b>Username</b></label>
 		<div>
-			<input id="usernameBar" type="text" placeholder="Enter Username" name="uname" required>
+			<input id="usernameBar" type="text" placeholder="Enter Username" name="username" required>
 		</div>
 		<div>
-			<label for="psw"><b>Password</b></label>
+			<label for="password"><b>Password</b></label>
 			<div>
-				<input id="passwordBar" type="password" placeholder="Enter Password" name="psw"
+				<input id="passwordBar" type="password" placeholder="Enter Password" name="password"
 					required>
 			</div>
 			<button type="submit">
@@ -162,13 +163,16 @@ span.psw {
 			</div>
 		</div>
 	</div>
+	</form>
 	
 	<div class="container" style="background-color: lightblue">
 		<span class="psw">Forgot <a href="#">password?</a></span>
 	</div>
 	
+	<form action= "<%= request.getContextPath() %>/login2" method="post">
 	<div class="secondContainer">
-		<span class="newUser">Don't have an account? <a href="#">Create an account</a></span>
+		<span class="newUser">Don't have an account? <a href="createAnAccount.jsp">Create an account</a></span>
 	</div>
+	</form>
 </body>
 </html>
