@@ -165,7 +165,7 @@ button:hover {
 </head>
 <body>
 	<div class="topnav">
-		<a class="active" href="#home">Home</a> <a href="#about">About</a> <a
+		<a class="active" href="login.jsp">Home</a> <a href="#about">About</a> <a
 			href="#contact">Contact</a>
 	</div>
 
