@@ -161,6 +161,7 @@ span.psw {
 					name="remember"> Remember me
 				</label>
 			</div>
+			<span style="color: red">${error}</span>
 		</div>
 	</div>
 	</form>
