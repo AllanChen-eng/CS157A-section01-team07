@@ -56,9 +56,25 @@ body {
 	padding-top: 15px;
 }
 
-.search-container #search-bar {
+.search-container #Depart-bar {
 	display: inline-block;
-	width: 350px;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.search-container #Arrive-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.search-container #Date-bar {
+	display: inline-block;
+	width: 150px;
 	height: 50px;
 	border-radius: 15px;
 	border: 2px solid #000000;
@@ -92,8 +108,9 @@ body {
 
 	<div class="search-container">
 		<form action="/action_page.php">
-			<input id="search-bar" type="text" placeholder="Search.."
-				name="search">
+			<input id="Depart-bar" type="text" placeholder="Depart">
+			<input id="Arrive-bar" type="text" placeholder="Arrive">
+			<input id="Date-bar" type="date" placeholder="Date">
 			<button id="search-button" type="submit">
 				<i class="fa fa-search"></i>
 			</button>
