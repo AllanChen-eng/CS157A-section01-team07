@@ -16,33 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Admins`
+-- Table structure for table `admins`
 --
 
-DROP TABLE IF EXISTS `Admins`;
+DROP TABLE IF EXISTS `admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-  CREATE TABLE `Admins` (
+  CREATE TABLE `admins` (
   `admin_id` int NOT NULL,
-  `admin first name` varchar(45) DEFAULT NULL,
-  `admin last name` varchar(45) DEFAULT NULL,
-  `admin username` varchar(45) DEFAULT NULL,
-  `admin password` varchar(45) DEFAULT NULL,
+  `admin_first_name` varchar(45) DEFAULT NULL,
+  `admin_last_name` varchar(45) DEFAULT NULL,
+  `admin_username` varchar(45) DEFAULT NULL,
+  `admin_password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Admins`
+-- Dumping data for table `admins`
 --
 
-LOCK TABLES `Admins` WRITE;
-/*!40000 ALTER TABLE `Admins` DISABLE KEYS */;
-INSERT INTO `Admins` VALUES (1, 'Allan', 'Chen', 'allan', 'allan123'),
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES (1, 'Allan', 'Chen', 'allan', 'allan123'),
                             (2, 'Jasmit', 'Mahajan', 'jasmit', 'jasmit123'),
 			    (3, 'Mike', 'Wu', 'mike', 'mike123'),
                             (4, 'Nick', 'Mendoza', 'nick', 'nick123');
-/*!40000 ALTER TABLE `Admins` ENABLE KEYS */;
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
