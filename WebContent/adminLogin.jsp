@@ -65,6 +65,31 @@ button:hover {
 	border: none;
 }
 
+.topnav2 {
+	overflow: hidden;
+	background-color: #e9e9e9;
+}
+
+.topnav2 a {
+	float: right;
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav2 a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav2 a.active2 {
+	background-color: #2196F3;
+	color: white;
+}
+
 .container {
 	text-align: center;
 }
@@ -131,6 +156,9 @@ span.psw {
 	<div class="topnav">
 		<a class="active" href="login.jsp">Home</a> <a href="#about">About</a> <a
 			href="#contact">Contact</a>
+		<div class="topnav2">
+			<a class="active2" href="login.jsp"><img src="https://img.icons8.com/dusk/16/000000/add-user-group-man-woman.png"/></a>
+		</div>
 	</div>
 	
 	<div class="logo">
