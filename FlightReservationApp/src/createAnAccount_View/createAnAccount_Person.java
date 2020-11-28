@@ -10,7 +10,7 @@ import createAnAccount_Model.createAnAccount;
 public class createAnAccount_Person {
 
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "Winter005#"; // put in your password to the MySQL Workbench database
 
 	public int registerAccount(createAnAccount createAccount) throws ClassNotFoundException {
 		String INSERT_CUSTOMERS_SQL = "INSERT INTO customers"
@@ -21,7 +21,7 @@ public class createAnAccount_Person {
 
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightcatch?useSSL=false",
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false",
 				user, password);
 
 				PreparedStatement ps = connection.prepareStatement(INSERT_CUSTOMERS_SQL);
@@ -49,20 +49,6 @@ public class createAnAccount_Person {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-//		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false",
-//				user, password);
-//
-//			PreparedStatement prepareStatement2 = connection.prepareStatement(INSERT_USERS_SQL)) {
-//			prepareStatement2.setInt(1, createAnAccount.getUser_id());
-//			prepareStatement2.setString(9, createAnAccount.getUsername());
-//			prepareStatement2.setString(10, createAnAccount.getPassword());
-//
-//			System.out.println(prepareStatement2);
-//			res = prepareStatement2.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
 
 		return res;
 	}

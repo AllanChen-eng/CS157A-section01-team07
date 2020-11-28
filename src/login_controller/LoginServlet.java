@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 				RequestDispatcher d = request.getRequestDispatcher("/homepage.jsp");
 				d.forward(request, response);
 			} else {
-				request.setAttribute("error", "Invalid login");
+				request.setAttribute("error", "Username or Password is incorrect. Please try again");
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {

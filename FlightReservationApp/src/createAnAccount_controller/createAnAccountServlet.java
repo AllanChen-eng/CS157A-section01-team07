@@ -16,7 +16,6 @@ import createAnAccount_View.createAnAccount_Person;
 public class createAnAccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private createAnAccount_Person cap = new createAnAccount_Person();
-//	private createAnAccount_Person cap2 = new createAnAccount_Person();
       
     public createAnAccountServlet() {
         super();
@@ -41,7 +40,7 @@ public class createAnAccountServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		createAnAccount caa = new createAnAccount();
-//		createAnAccount caa2 = new createAnAccount();
+		
 		caa.setFirstName(firstName);
 		caa.setLastName(lastName);
 		caa.setEmailAddress(emailAddress);
@@ -52,12 +51,8 @@ public class createAnAccountServlet extends HttpServlet {
 		caa.setUsername(username);
 		caa.setPassword(password);
 		
-//		caa2.setUsername(username);
-//		caa2.setPassword(password);
-		
 		try {
 			cap.registerAccount(caa);
-//			cap2.registerAccount(caa2);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
