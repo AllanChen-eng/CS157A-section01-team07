@@ -151,13 +151,6 @@ body {
 	border: 2px solid #000000;
 }
 
-.search-container #Date-bar {
-	display: inline-block;
-	width: 150px;
-	height: 50px;
-	border-radius: 15px;
-	border: 2px solid #000000;
-}
 
 .search-container #search-button {
 	height: 50px;
@@ -215,8 +208,7 @@ body {
 	<div class="search-container">
 		<form action="/action_page.php">
 			<input id="Depart-bar" type="text" placeholder="Depart"> <input
-				id="Arrive-bar" type="text" placeholder="Arrive"> <input
-				id="Date-bar" type="date" placeholder="Date">
+				id="Arrive-bar" type="text" placeholder="Arrive">
 			<button id="search-button" type="submit">
 				<i class="fa fa-search"></i>
 			</button>
