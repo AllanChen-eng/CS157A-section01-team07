@@ -64,6 +64,38 @@ body {
 	border: 2px solid #000000;
 }
 
+.container #homeAddressBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.container #cityBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.container #stateBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.container #zipcodeBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
 .container #usernameBar {
 	display: inline-block;
 	width: 200px;
@@ -132,59 +164,91 @@ button:hover {
 </style>
 </head>
 <body>
-
 	<div class="topnav">
-		<a class="active" href="#home">Home</a> <a href="#about">About</a> <a
+		<a class="active" href="login.jsp">Home</a> <a href="#about">About</a> <a
 			href="#contact">Contact</a>
 	</div>
 
 	<div class="logo">
 		<p>Create an Account</p>
 	</div>
-
-	<div class="firstName-container">
-		<label for="first_Name"><b>First Name</b></label>
-		<div>
-			<input id="first_name_bar" type="text" placeholder="Enter First Name"
+	
+	<form action= "<%= request.getContextPath() %>/createAccount" method="post">
+		<div class="firstName-container">
+			<label for="firstName"><b>First Name</b></label>
+			<div>
+				<input id="first_name_bar" type="text" placeholder="Enter First Name"
 				name="firstName" required>
+			</div>
 		</div>
-	</div>
 
-	<div class="lastName-container">
-		<label for="first_Name"><b>Last Name</b></label>
-		<div>
-			<input id="last_name_bar" type="text" placeholder="Enter Last Name"
+		<div class="lastName-container">
+			<label for="lastName"><b>Last Name</b></label>
+			<div>
+				<input id="last_name_bar" type="text" placeholder="Enter Last Name"
 				name="lastName" required>
+			</div>
 		</div>
-	</div>
 
-	<div class="container">
-		<label for="email"><b>Email</b></label>
-		<div>
-			<input id="emailBar" type="text" placeholder="Enter Email"
-				name="email" required>
+		<div class="container">
+			<label for="emailAddress"><b>Email</b></label>
+			<div>
+				<input id="emailBar" type="text" placeholder="Enter Email"
+					name="emailAddress" required>
+			</div>
 		</div>
-	</div>
-
-	<div class="container">
-		<label for="username"><b>Username</b></label>
-		<div>
-			<input id="usernameBar" type="text" placeholder="Enter Username"
-				name="username" required>
+	
+		<div class="container">
+			<label for="homeAddress"><b>Address</b></label>
+			<div>
+				<input id="homeAddressBar" type="text" placeholder="Enter Address"
+					name="homeAddress" required>
+			</div>
 		</div>
-	</div>
-
-	<div class="container">
-		<label for="passwd"><b>Password</b></label>
-		<div>
-			<input id="passwordBar" type="password" placeholder="Enter Password"
-				name="passwd" required>
+	
+		<div class="container">
+			<label for="city"><b>City</b></label>
+			<div>
+				<input id="cityBar" type="text" placeholder="Enter City"
+					name="city" required>
+			</div>
 		</div>
-	</div>
+	
+		<div class="container">
+			<label for="state"><b>State</b></label>
+			<div>
+				<input id="stateBar" type="text" placeholder="Enter State"
+					name="state" required>
+			</div>
+		</div>
+	
+		<div class="container">
+			<label for="zipcode"><b>Zipcode</b></label>
+			<div>
+				<input id="zipcodeBar" type="text" placeholder="Enter Zipcode"
+					name="zipcode" required>
+			</div>
+		</div>
 
-	<div class="container">
-		<button type="submit">Create Account</button>
-	</div>
+		<div class="container">
+			<label for="username"><b>Username</b></label>
+			<div>
+				<input id="usernameBar" type="text" placeholder="Enter Username"
+					name="username" required>
+			</div>
+		</div>
 
+		<div class="container">
+			<label for="password"><b>Password</b></label>
+			<div>
+				<input id="passwordBar" type="password" placeholder="Enter Password"
+					name="password" required>
+			</div>
+		</div>
+
+		<div class="container">
+			<button type="submit">Create Account</button>
+		</div>
+	</form>
 </body>
 </html>

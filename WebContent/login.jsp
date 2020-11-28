@@ -65,6 +65,31 @@ button:hover {
 	border: none;
 }
 
+.topnav2 {
+	overflow: hidden;
+	background-color: #e9e9e9;
+}
+
+.topnav2 a {
+	float: right;
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav2 a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav2 a.active2 {
+	background-color: #2196F3;
+	color: white;
+}
+
 .container {
 	text-align: center;
 }
@@ -129,8 +154,11 @@ span.psw {
 </head>
 <body>
 	<div class="topnav">
-		<a class="active" href="#home">Home</a> <a href="#about">About</a> <a
-			href="#contact">Contact</a>
+		<a class="active" href="login.jsp">Home</a> <a href="#about">About</a> <a
+			href="#contact">Contact</a> 
+		<div class="topnav2">
+			<a class="active2" href="adminLogin.jsp"><img src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png"/></a>
+		</div>
 	</div>
 	
 	<div class="logo">
@@ -140,20 +168,20 @@ span.psw {
 	<div class="imgcontainer">
 		<img src="plane.jpg" alt="Avatar" class="avatar">
 	</div>
-
+	
+	<form action= "<%= request.getContextPath() %>/login" method="post">
 	<div class="container">
-		<form action = "submitLogin.jsp" method = POST>
-		<label for="uname"><b>Username</b></label>
+		<label for="username"><b>Username</b></label>
 		<div>
 			<input id="usernameBar" type="text" placeholder="Enter Username" name="username" required>
 		</div>
 		<div>
-			<label for="psw"><b>Password</b></label>
+			<label for="password"><b>Password</b></label>
 			<div>
 				<input id="passwordBar" type="password" placeholder="Enter Password" name="password"
 					required>
 			</div>
-			<button type="submit" value = "Submit">
+			<button type="submit">
 				Login
 			</button>
 			<div>
@@ -161,18 +189,21 @@ span.psw {
 					name="remember"> Remember me
 				</label>
 			</div>
-			<span style="color: red">${error}</span>
+			<div>
+				<span style="color: red">${error}</span>
+			</div>
 		</div>
-		</form>
 	</div>
-		
+	</form>
 	
 	<div class="container" style="background-color: lightblue">
 		<span class="psw">Forgot <a href="#">password?</a></span>
 	</div>
 	
+	<form action= "<%= request.getContextPath() %>/login2" method="post">
 	<div class="secondContainer">
-		<span class="newUser">Don't have an account? <a href="#">Create an account</a></span>
+		<span class="newUser">Don't have an account? <a href="createAnAccount.jsp">Create an account</a></span>
 	</div>
+	</form>
 </body>
 </html>
