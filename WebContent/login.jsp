@@ -196,9 +196,11 @@ span.psw {
 	</div>
 	</form>
 	
-	<div class="container" style="background-color: lightblue">
-		<span class="psw">Forgot <a href="#">password?</a></span>
+	<form action= "<%= request.getContextPath() %>/forgotPassword2" method="post">
+	<div class="secondContainer" style="background-color: lightblue">
+		<span class="password">Forgot <a href="forgotPassword.jsp">password?</a></span>
 	</div>
+	</form>
 	
 	<form action= "<%= request.getContextPath() %>/login2" method="post">
 	<div class="secondContainer">

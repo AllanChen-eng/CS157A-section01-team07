@@ -1,6 +1,6 @@
-package login_Model;
+package admin_Model;
 
-public class Login {
+public class Admin {
 	private static String username;
 	private static String password;
 	

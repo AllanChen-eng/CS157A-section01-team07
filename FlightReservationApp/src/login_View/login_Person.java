@@ -6,7 +6,7 @@ import login_Model.Login;
 
 public class login_Person {
 	String user = "root";
-	String password = "password"; //put in your password to the MySQL Workbench database
+	String password = "Winter005#"; //put in your password to the MySQL Workbench database
 
 	public boolean login(Login log) throws ClassNotFoundException {
 
@@ -14,7 +14,7 @@ public class login_Person {
 		
 		boolean res = false;
 		Class.forName("com.mysql.jdbc.Driver");
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightcatch?allowPublicKeyRetrieval=true&useSSL=false",
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false",
 				user, password);
 
 			PreparedStatement ps = connection.prepareStatement(login_Vals)) {

@@ -1,4 +1,4 @@
-package admin_controller;
+package adminForgotPassword_controller;
 
 import java.io.IOException;
 
@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin_Model.Admin;
-import admin_View.admin_Person;
+import adminForgotPassword_Model.adminForgotPassword;
+import adminForgotPassword_View.adminForgotPassword_Person;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class AdminForgotPasswordServlet
  */
-@WebServlet("/admin_login")
-public class Admin_LoginServlet extends HttpServlet {
+@WebServlet("/adminForgotPassword")
+public class AdminForgotPasswordServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private admin_Person lp = new admin_Person();
+	private adminForgotPassword_Person afpp = new adminForgotPassword_Person();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Admin_LoginServlet() {
+	public AdminForgotPasswordServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -36,7 +36,7 @@ public class Admin_LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		RequestDispatcher d = request.getRequestDispatcher("/adminLogin.jsp");
+		RequestDispatcher d = request.getRequestDispatcher("/adminForgotPassword.jsp");
 		d.forward(request, response);
 	}
 
@@ -49,17 +49,18 @@ public class Admin_LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		Admin admin = new Admin();
-		admin.setUsername(username);
-		admin.setPassword(password);
+		adminForgotPassword afg = new adminForgotPassword();
+		afg.setUsername(username);
+		afg.setPassword(password);
 
 		try {
-			if (lp.admin_login(admin)) {
-				RequestDispatcher d = request.getRequestDispatcher("/adminHomepage.jsp");
+			if (afpp.checkAdminUsername(afg)) {
+				afpp.registerAdminNewPassword(afg);
+				RequestDispatcher d = request.getRequestDispatcher("/adminLogin.jsp");
 				d.forward(request, response);
 			} else {
-				request.setAttribute("error", "Username or Password is incorrect. Please try again");
-				request.getRequestDispatcher("/adminLogin.jsp").forward(request, response);
+				request.setAttribute("error", "Username is incorrect. Please try again");
+				request.getRequestDispatcher("/adminForgotPassword.jsp").forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

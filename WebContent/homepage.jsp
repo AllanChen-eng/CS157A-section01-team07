@@ -207,8 +207,8 @@ body {
 
 	<div class="search-container">
 		<form action="/action_page.php">
-			<input id="Depart-bar" type="text" placeholder="Depart"> <input
-				id="Arrive-bar" type="text" placeholder="Arrive">
+			<input id="Depart-bar" type="text" placeholder="Depart"> 
+			<input id="Arrive-bar" type="text" placeholder="Arrive">
 			<button id="search-button" type="submit">
 				<i class="fa fa-search"></i>
 			</button>
