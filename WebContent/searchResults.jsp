@@ -5,20 +5,8 @@
 <head>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-* {
-	box-sizing: border-box;
-}
-
-body {
-	background-color: lightblue;
-}
-
-body {
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
 .topnav {
 	overflow: hidden;
 	background-color: #e9e9e9;
@@ -130,46 +118,29 @@ body {
 	display: block;
 }
 
-.search-container {
-	text-align: center;
-	padding-top: 15px;
+body {
+	background-color: lightblue;
 }
 
-.search-container #Depart-bar {
-	display: inline-block;
-	width: 250px;
-	height: 50px;
-	border-radius: 15px;
-	border: 2px solid #000000;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.search-container #Arrive-bar {
-	display: inline-block;
-	width: 250px;
-	height: 50px;
-	border-radius: 15px;
-	border: 2px solid #000000;
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
-
-.search-container #search-button {
-	height: 50px;
-	width: 75px;
-	border-radius: 15px;
-	border: 2px solid #000000;
-}
-
-.logo {
-	text-align: center;
-	padding-top: 100px;
-	font-size: 50px;
-	font-weight: bold;
-}
 </style>
 </head>
-<body>
 
-	<div class="topnav">
+<% String table = (String) request.getAttribute("table"); %>
+
+<body>
+<div class="topnav">
 		<a class="active" href="homepage.jsp">Home</a> <a href="#about">About</a>
 		<a href="#contact">Contact</a>
 		<div class="topnav2">
@@ -181,7 +152,7 @@ body {
 	<div id="homeDropdown" class=dropdown-content>
 		<a class="active2" href="login.jsp">Logout</a>
 	</div>
-
+	
 	<script>
 		function homepageDropdown() {
 			document.getElementById("homeDropdown").classList.toggle("show");
@@ -201,19 +172,7 @@ body {
 		}
 	</script>
 
-	<div class="logo">
-		<p>FlightCatch Homepage</p>
-	</div>
-
-	<div class="search-container">
-		<form action="search" method="GET">
-			<input id="Depart-bar" type="text" name="departVal" placeholder="Depart"> <input
-				id="Arrive-bar" type="text" name="arriveVal" placeholder="Arrive">
-			<button id="search-button" type="submit">
-				<i class="fa fa-search"></i>
-			</button>
-		</form>
-	</div>
-
+<%= table %>
 </body>
+
 </html>
