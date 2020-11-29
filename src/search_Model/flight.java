@@ -7,6 +7,8 @@ public class flight {
 	private static String Airline;
 	private static String departs;
 	private static String arrives;
+	private static String departure_time;
+	private static String arrival_time;
 
 	public static int getFlight_id() {
 		return flight_id;
@@ -54,5 +56,21 @@ public class flight {
 
 	public void setArrives(String arrives) {
 		this.arrives = arrives;
+	}
+
+	public String getDepartureTime() {
+		return departure_time;
+	}
+
+	public void setDepartureTime(String departureTime) {
+		this.departure_time = departureTime;
+	}
+
+	public String getArrivalTime() {
+		return arrival_time;
+	}
+
+	public void setArrivalTime(String arrivalTime) {
+		this.arrival_time = arrivalTime;
 	}
 }
