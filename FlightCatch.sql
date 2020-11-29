@@ -22,14 +22,14 @@
 DROP TABLE IF EXISTS `admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-  CREATE TABLE `admins` (
+CREATE TABLE `admins` (
   `admin_id` int NOT NULL AUTO_INCREMENT,
   `admin_first_name` varchar(45) DEFAULT NULL,
   `admin_last_name` varchar(45) DEFAULT NULL,
   `admin_username` varchar(45) DEFAULT NULL,
   `admin_password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,11 +38,33 @@ DROP TABLE IF EXISTS `admins`;
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1, 'Allan', 'Chen', 'allan', 'allan123'),
-                            (2, 'Jasmit', 'Mahajan', 'jasmit', 'jasmit123'),
-			    (3, 'Mike', 'Wu', 'mike', 'mike123'),
-                            (4, 'Nick', 'Mendoza', 'nick', 'nick123');
+INSERT INTO `admins` VALUES (1,'Allan','Chen','allan','allan123'),(2,'Jasmit','Mahajan','jasmit','jasmit123'),(3,'Mike','Wu','mike','mike123'),(4,'Nick','Mendoza','nick','nick123');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Airport`
+--
+
+DROP TABLE IF EXISTS `Airport`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Airport` (
+  `city` varchar(45) DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `airport_id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`airport_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Airport`
+--
+
+LOCK TABLES `Airport` WRITE;
+/*!40000 ALTER TABLE `Airport` DISABLE KEYS */;
+INSERT INTO `Airport` VALUES ('Beijing','China',1),('Berlin','Germany',2),('Buenos Aires','Argentina',3),('Cairo','Egypt',4),('Delhi','India',5),('Jerusalem','Israel',6),('London','United Kingdom',7),('Los Angeles','United States of America',8),('Mexico City','Mexico',9),('Moscow','Russia',10),('Mumbal','India',11),('Osaka','Japan',12),('Paris ','France',13),('Pretoria','South Africa',14),('Rio De Janeiro','Brazil',15),('San Francisco','United States of America',16),('Sao Pualo','Brazil',17),('Seoul','South Korea',18),('Shanghai','China',19),('Tokyo','Japan',20);
+/*!40000 ALTER TABLE `Airport` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -123,13 +145,13 @@ INSERT INTO `Buyers` VALUES (1,0,0,1),(2,1,0,0),(3,0,0,0),(4,0,1,0),(5,1,0,0),(6
 UNLOCK TABLES;
 
 --
--- Table structure for table `Customers`
+-- Table structure for table `customers`
 --
 
 DROP TABLE IF EXISTS `customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `customers` ( 
+CREATE TABLE `customers` (
   `user_id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
@@ -137,7 +159,7 @@ CREATE TABLE `customers` (
   `home_address` varchar(45) DEFAULT NULL,
   `city` varchar(45) DEFAULT NULL,
   `state` varchar(45) DEFAULT NULL,
-  `zipcode` int(10) NOT NULL,
+  `zipcode` int NOT NULL,
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
@@ -146,23 +168,13 @@ CREATE TABLE `customers` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Customers`
+-- Dumping data for table `customers`
 --
 
 LOCK TABLES `customers` WRITE;
-/*!40000 ALTER TABLE `Customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1, 'Andy', 'Dalton', 'andy@andy.com', '54321 lombard street', 'San Francisco', 'CA', 95431, 'username', 'test'),
-                               (2, 'Bill', 'Nye', 'bill@bill.com', '21423 rocky road', 'Denver', 'CO', 85721, 'username1', 'hunter2'),
-                               (3, 'Bob', 'Ross', 'bob@gmail.com', '500 apartment road', 'Rochester', 'NY', 02143, 'username2', 'password2'),
-                               (4, 'Carter', 'Williams', 'carter@carter.com', '100 abby street', 'Chicago', 'IL', 46328, 'username3', 'test1'),
-                               (5, 'Christopher', 'Columbus', 'christopher@christopher.com', '1222 berry road', 'Akron', 'OH', '48294', 'username4', 'test2'),
-                               (6, 'Hannah', 'Montana', 'hannah@hannah.com', '1234 disney drive', 'Los Angeles', 'CA', 29435, 'username5', 'hunter3'),
-                               (7, 'John', 'Cena', 'john@john.com', '2314 disney resort drive', 'Orlando', 'FL', 30541, 'username6', 'name'),
-                               (8, 'Katherine', 'Jennings', 'katherine@katherine.com', '12415 palace place', 'Las Vegas', 'NV', 04385, 'username7', 'password5'),
-                               (9, 'Phil', 'Jackson', 'phil@phil.com', '12405 bulls ave', 'Springfield', 'WI', 56214 , 'username8', 'username2'),
-                               (10, 'Sarah', 'Jones', 'sarah@sarah.com', '123 dock street', 'Fresno', 'CA', 91832, 'username9', 'password'),
-                               (11, 'Victoria', 'Azerenka', 'victoria@victoria.com', '1234 tennis ave', 'Pittsburgh', 'PN', 83195, 'username11', 'password5');
-/*!40000 ALTER TABLE `Customers` ENABLE KEYS */;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1,'Andy','Dalton','andy@andy.com','54321 lombard street','San Francisco','CA',95431,'username','test'),(2,'Bill','Nye','bill@bill.com','21423 rocky road','Denver','CO',85721,'username1','hunter2'),(3,'Bob','Ross','bob@gmail.com','500 apartment road','Rochester','NY',2143,'username2','password2'),(4,'Carter','Williams','carter@carter.com','100 abby street','Chicago','IL',46328,'username3','test1'),(5,'Christopher','Columbus','christopher@christopher.com','1222 berry road','Akron','OH',48294,'username4','test2'),(6,'Hannah','Montana','hannah@hannah.com','1234 disney drive','Los Angeles','CA',29435,'username5','hunter3'),(7,'John','Cena','john@john.com','2314 disney resort drive','Orlando','FL',30541,'username6','name'),(8,'Katherine','Jennings','katherine@katherine.com','12415 palace place','Las Vegas','NV',4385,'username7','password5'),(9,'Phil','Jackson','phil@phil.com','12405 bulls ave','Springfield','WI',56214,'username8','username2'),(10,'Sarah','Jones','sarah@sarah.com','123 dock street','Fresno','CA',91832,'username9','password'),(11,'Victoria','Azerenka','victoria@victoria.com','1234 tennis ave','Pittsburgh','PN',83195,'username11','password5');
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -262,30 +274,6 @@ LOCK TABLES `Have a` WRITE;
 /*!40000 ALTER TABLE `Have a` DISABLE KEYS */;
 INSERT INTO `Have a` VALUES (1,'Allan'),(2,'Nick'),(3,'Jasmit'),(4,'Andy'),(5,'Bill'),(1,'Bob'),(2,'Sarah'),(3,'Victoria'),(4,'Carter'),(5,'Christopher'),(1,'Hannah'),(2,'John'),(3,'Katherine'),(4,'Mike'),(5,'Phil');
 /*!40000 ALTER TABLE `Have a` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Locations`
---
-
-DROP TABLE IF EXISTS `Locations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Locations` (
-  `city` varchar(45) NOT NULL,
-  `country` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`city`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Locations`
---
-
-LOCK TABLES `Locations` WRITE;
-/*!40000 ALTER TABLE `Locations` DISABLE KEYS */;
-INSERT INTO `Locations` VALUES ('Beijing','China'),('Berlin','Germany'),('Buenos Aires',NULL),('Cairo','Egypt'),('Delhi','India'),('Jerusalem','Israel'),('London','United Kingdom'),('Los Angeles','United States of America'),('Mexico City','Mexico'),('Moscow','Russia'),('Mumbal','India'),('Osaka','Japan'),('Paris ','France'),('Pretoria','South Africa'),('Rio De Janeiro','Brazil'),('San Francisco','United States of America'),('Sao Pualo','Brazil'),('Seoul','South Korea'),('Shanghai','China'),('Tokyo','Japan');
-/*!40000 ALTER TABLE `Locations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -410,7 +398,7 @@ INSERT INTO `Tickets` VALUES (1,15),(2,14),(3,13),(4,12),(5,11),(6,10),(7,9),(8,
 UNLOCK TABLES;
 
 --
--- Table structure for table `Users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -425,29 +413,15 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Users`
+-- Dumping data for table `users`
 --
 
 LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'username','test'),
-			   (2,'username1','hunter2'),
-                           (3,'username2','password2'),
-                           (4,'username3','test1'),
-                           (5,'username4','test2'),
-                           (6,'username5','hunter3'),
-                           (7,'username6','name'),
-                           (8,'username7','password5'),
-                           (9,'username8','username2'),
-                           (10,'username9','password'),
-                           (11,'username11','password5'),
-                           (12,'username10','password3'),
-                           (13,'username12','password'),
-                           (14,'username13','password'),
-                           (15,'username14','password'),
-                           (16,'username15','password');
-/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'username','test'),(2,'username1','hunter2'),(3,'username2','password2'),(4,'username3','test1'),(5,'username4','test2'),(6,'username5','hunter3'),(7,'username6','name'),(8,'username7','password5'),(9,'username8','username2'),(10,'username9','password'),(11,'username11','password5'),(12,'username10','password3'),(13,'username12','password'),(14,'username13','password'),(15,'username14','password'),(16,'username15','password');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -457,5 +431,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-09 16:40:12
---Updated SQL on 2020-11-15 
+-- Dump completed on 2020-11-28 20:33:26
