@@ -55,9 +55,9 @@ public class AdminSearchServlet extends HttpServlet {
 		AdminSearch_Person asp = new AdminSearch_Person();
 		AdminSearch adminSearch = new AdminSearch();
 		
-		adminSearch.setCity(cityD);
+		adminSearch.setCityD(cityD);
 		adminSearch.setDepartureTime(timeD);
-		adminSearch.setCity(cityA);
+		adminSearch.setCityA(cityA);
 		adminSearch.setArrivalTime(timeA);
 		
 		asp.doAdminSearch(departs, arrives);

@@ -241,21 +241,16 @@ body {
 			<input id="City-bar" type="text" name="cityDVal"
 				placeholder="City"> <input id="Time-bar" type="text"
 				name="departureTimeVal" placeholder="Time">
-			<button id="search-button" type="submit">
-				<i class="fas fa-arrow-right"></i>
-			</button>
-		</form>
-	</div>
-	
-	<div class="logo2">
+				
+				
+					<div class="logo2">
 		<p>Admin Edit to Arrives Table</p>
 	</div>
-	
-	<div class="search-container">
-		<form action="adminSearch" method="GET">
-			<input id="City-bar" type="text" name="cityAVal"
+					<div class="search-container">
+				<input id="City-bar" type="text" name="cityAVal"
 				placeholder="City"> <input id="Time-bar" type="text"
 				name="timeAVal" placeholder="Time">
+					</div>
 			<button id="search-button" type="submit">
 				<i class="fas fa-arrow-right"></i>
 			</button>
