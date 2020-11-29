@@ -17,7 +17,10 @@ public class search_Query {
 	private ResultSet rs;
 
 	public void doSearch(String departs, String arrives) {
-		String query = "SELECT * FROM flight WHERE departs LIKE ? AND arrives LIKE ?";
+		String query = "SELECT departs.city as 'departs', arrives.city as 'arrives', departs.time as 'time1', arrives.time as 'time2', "
+				+ "departs.flight_id, flight.airline, flight.passenger_capacity, flight.status\r\n"
+				+ "FROM departs join arrives on departs.flight_id = arrives.flight_id join flight on flight.flight_id = departs.flight_id\r\n"
+				+ "WHERE departs.flight_id = arrives.flight_id AND departs.city LIKE ? AND arrives.city LIKE ?";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightcatch?useSSL=false", user, password);
@@ -44,7 +47,15 @@ public class search_Query {
 		table += "</th>";
 
 		table += "<th>";
+		table += "Departure Time";
+		table += "</th>";
+
+		table += "<th>";
 		table += "Arrives";
+		table += "</th>";
+
+		table += "<th>";
+		table += "Arrival time";
 		table += "</th>";
 
 		table += "<th>";
@@ -62,6 +73,8 @@ public class search_Query {
 				flight1.setAirline(this.rs.getString("airline"));
 				flight1.setDeparts(this.rs.getString("departs"));
 				flight1.setArrives(this.rs.getString("arrives"));
+				flight1.setDepartureTime(this.rs.getTime("time1").toString());
+				flight1.setArrivalTime(this.rs.getTime("time2").toString());
 
 				table += "<tr>";
 				table += "<td>";
@@ -69,7 +82,15 @@ public class search_Query {
 				table += "</td>";
 
 				table += "<td>";
+				table += flight1.getDepartureTime();
+				table += "</td>";
+
+				table += "<td>";
 				table += flight1.getArrives();
+				table += "</td>";
+
+				table += "<td>";
+				table += flight1.getArrivalTime();
 				table += "</td>";
 
 				table += "<td>";
