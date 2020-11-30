@@ -5,8 +5,20 @@
 <head>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lightblue;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .topnav {
 	overflow: hidden;
 	background-color: #e9e9e9;
@@ -64,14 +76,6 @@
 	color: white;
 }
 
-.topnav2 input[type=text] {
-	padding: 6px;
-	margin-top: 8px;
-	font-size: 17px;
-	border: none;
-}
-
-
 .dropdownbtn {
 	float: right;
 	background-color: #3498DB;
@@ -118,34 +122,59 @@
 	display: block;
 }
 
-body {
-	background-color: lightblue;
+.search-container {
+	text-align: center;
+	padding-top: 15px;
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+.search-container #Depart-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.search-container #Arrive-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
 }
 
+.search-container #search-button {
+	height: 50px;
+	width: 75px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.logo {
+	text-align: center;
+	padding-top: 100px;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.logo2 {
+	text-align: center;
+	padding-top: 50px;
+	font-size: 25px;
+	font-weight: bold;
+}
 </style>
 </head>
-
-<% String table = (String) request.getAttribute("adminTable"); %>
-
 <body>
-<div class="topnav">
+
+	<div class="topnav">
 		<a class="active" href="adminHomepage.jsp">Home</a> <a href="adminAbout.jsp">About</a>
-		<a href="#contact">Contact</a> <a href="adminSearch">Search</a>
+		<a href="#contact">Contact</a> <a href="adminSearch.jsp">Search</a>
 		<div class="topnav2">
-			<button onclick="adminHomepageDropdown()" class="dropdownbtn"><img
-				src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png" /></button>
+			<button onclick="adminHomepageDropdown()" class="dropdownbtn">
+				<img
+					src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png" />
+			</button>
 		</div>
 	</div>
 	
@@ -172,7 +201,20 @@ td, th {
 		}
 	</script>
 
-<%= table %>
-</body>
+	<div class="logo">
+		<p>FlightCatch Admin Search</p>
+	</div>
 
+	<div class="search-container">
+		<form action="adminSearch" method="GET">
+			<input id="Depart-bar" type="text" name="departVal"
+				placeholder="Depart"> <input id="Arrive-bar" type="text"
+				name="arriveVal" placeholder="Arrive">
+			<button id="search-button" type="submit">
+				<i class="fa fa-search"></i>
+			</button>
+		</form>
+	</div>
+	
+</body>
 </html>

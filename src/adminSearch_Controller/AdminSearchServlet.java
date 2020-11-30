@@ -15,7 +15,7 @@ import adminSearch_View.AdminSearch_Person;
 /**
  * Servlet implementation class AdminSearchServlet
  */
-@WebServlet("/adminSearch")
+@WebServlet("/adminHomepage")
 public class AdminSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,13 +45,13 @@ public class AdminSearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		String departs = request.getParameter("departVal");
-		String arrives = request.getParameter("arriveVal");
+//		String departs = request.getParameter("departVal");
+//		String arrives = request.getParameter("arriveVal");
 		String cityD = request.getParameter("cityDVal");
 		String cityA = request.getParameter("cityAVal");
 		String timeD = request.getParameter("departureTimeVal");
 		String timeA = request.getParameter("timeAVal");
-		int passenger_capacity = Integer.parseInt(request.getParameter("passenger_capacity"));
+		int passenger_capacity = Integer.parseInt(request.getParameter("passengerCapacity"));
 		String status = request.getParameter("status");
 		String airline = request.getParameter("airline");
 
@@ -67,7 +67,7 @@ public class AdminSearchServlet extends HttpServlet {
 		adminSearch.setStatus(status);
 		
 		
-		asp.doAdminSearch(departs, arrives);
+//		asp.doAdminSearch(departs, arrives);
 		
 		try {
 			asp.adminInsertDepartureTimeAndCity(adminSearch);
@@ -88,13 +88,16 @@ public class AdminSearchServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		String table = asp.getAdminHTMLTable();
-
-		request.setAttribute("adminTable", table);
-		String url = "/adminSearchResults.jsp";
-
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		RequestDispatcher rd2 = request.getRequestDispatcher("/adminHomepage.jsp");
+		
+//		String table = asp.getAdminHTMLTable();
+//
+//		request.setAttribute("adminTable", table);
+//		String url = "/adminSearchResults.jsp";
+//
+//		RequestDispatcher rd = request.getRequestDispatcher(url);
+//		rd.forward(request, response);
+		rd2.forward(request, response);
 
 	}
 
