@@ -10,7 +10,7 @@ import adminSearch_Model.AdminSearch;
 
 public class AdminSearch_Person {
 	String user = "root";
-	String password = "Winter005#";
+	String password = "ALuckyNugget7";
 
 	private Connection conn;
 	private ResultSet rs;
@@ -110,16 +110,16 @@ public class AdminSearch_Person {
 	}
 	
 	public int adminInsertDepartureTimeAndCity(AdminSearch adminSearch) throws ClassNotFoundException {
-		String INSERT_DEPARTURES_SQL = "INSERT INTO departs" + " (city, flight_id, time) VALUES " + " (?, ?, ?);";
+		String INSERT_DEPARTURES_SQL = "INSERT INTO FlightCatch.departs" + "(city, flight_id, time) VALUES " + " (?, ?, ?);";
 		
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", 
 				user, password);
 			PreparedStatement ps = connection.prepareStatement(INSERT_DEPARTURES_SQL)){
-				ps.setString(1, AdminSearch.getCity());
-				ps.setInt(2, AdminSearch.getFlight_id());
-				ps.setString(3, AdminSearch.getDepartureTime());
+				ps.setString(1, adminSearch.getCityD());
+				ps.setInt(2, adminSearch.getFlight_id());
+				ps.setString(3, adminSearch.getDepartureTime());
 					
 				System.out.println(ps);
 					
@@ -132,16 +132,16 @@ public class AdminSearch_Person {
 	}
 	
 	public int adminInsertArrivalTimeAndCity(AdminSearch adminSearch) throws ClassNotFoundException {
-		String INSERT_ARRIVALS_SQL = "INSERT INTO departs" + " (city, time, flight_id) VALUES " + " (?, ?, ?);";
+		String INSERT_ARRIVALS_SQL = "INSERT INTO FlightCatch.Arrives" + " (city, time, flight_id) VALUES " + " (?, ?, ?);";
 		
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", 
 				user, password);
 			PreparedStatement ps = connection.prepareStatement(INSERT_ARRIVALS_SQL)){
-				ps.setString(1, AdminSearch.getCity());
-				ps.setString(2, AdminSearch.getDepartureTime());
-				ps.setInt(3, AdminSearch.getFlight_id());
+				ps.setString(1, adminSearch.getCityA());
+				ps.setString(2, adminSearch.getDepartureTime());
+				ps.setInt(3, adminSearch.getFlight_id());
 					
 				System.out.println(ps);
 					

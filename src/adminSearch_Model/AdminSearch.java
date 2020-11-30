@@ -1,25 +1,58 @@
 package adminSearch_Model;
 
 public class AdminSearch {
-	private static int flight_id;
-	private static int passenger_capacity;
-	private static String status;
-	private static String Airline;
-	private static String departs;
-	private static String arrives;
-	private static String departure_time;
-	private static String arrival_time;
-	private static String city;
+	private  int flight_id;
+	private  int passenger_capacity;
+	private  String status;
+	private  String Airline;
+	private  String departs;
+	private  String arrives;
+	private  String departure_time;
+	private String arrival_time;
+	private  String cityA;
+	private String cityD;
 
-	public static int getFlight_id() {
+	public int getFlight_id() {
 		return flight_id;
+	}
+
+	public String getDeparture_time() {
+		return departure_time;
+	}
+
+	public void setDeparture_time(String departure_time1) {
+		departure_time = departure_time1;
+	}
+
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public void setArrival_time(String arrival_time1) {
+		arrival_time = arrival_time1;
+	}
+
+	public String getCityA() {
+		return cityA;
+	}
+
+	public void setCityA(String cityA1) {
+		cityA = cityA1;
+	}
+
+	public String getCityD() {
+		return cityD;
+	}
+
+	public void setCityD(String cityD) {
+		this.cityD = cityD;
 	}
 
 	public void setFlight_id(int flight_id) {
 		this.flight_id = flight_id;
 	}
 
-	public static int getPassenger_capacity() {
+	public int getPassenger_capacity() {
 		return passenger_capacity;
 	}
 
@@ -27,7 +60,7 @@ public class AdminSearch {
 		this.passenger_capacity = passenger_capacity;
 	}
 
-	public static String getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
@@ -35,7 +68,7 @@ public class AdminSearch {
 		this.status = status;
 	}
 
-	public static String getAirline() {
+	public String getAirline() {
 		return Airline;
 	}
 
@@ -43,7 +76,7 @@ public class AdminSearch {
 		this.Airline = airline;
 	}
 
-	public static String getDeparts() {
+	public String getDeparts() {
 		return departs;
 	}
 
@@ -51,7 +84,7 @@ public class AdminSearch {
 		this.departs = departs;
 	}
 
-	public static String getArrives() {
+	public String getArrives() {
 		return arrives;
 	}
 
@@ -59,7 +92,7 @@ public class AdminSearch {
 		this.arrives = arrives;
 	}
 
-	public static String getDepartureTime() {
+	public String getDepartureTime() {
 		return departure_time;
 	}
 
@@ -67,7 +100,7 @@ public class AdminSearch {
 		this.departure_time = departureTime;
 	}
 
-	public static String getArrivalTime() {
+	public String getArrivalTime() {
 		return arrival_time;
 	}
 
@@ -75,11 +108,4 @@ public class AdminSearch {
 		this.arrival_time = arrivalTime;
 	}
 	
-	public static String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
 }
