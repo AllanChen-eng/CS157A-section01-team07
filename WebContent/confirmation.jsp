@@ -82,8 +82,10 @@ img.avatar {
 			<a class="active2" href="adminLogin.jsp"><img src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png"/></a>
 		</div>
     </div>
-
-    
+    <h1> Confirmation</h1>
+    <% String table = (String) request.getAttribute("table"); %>
+<%= table %>
+    <!--- table
     <table cellspacing="0" id="table1" style="width:100%">
         <tr>
           <h1> Reserve a Plane Ticket </h1>
@@ -106,7 +108,7 @@ img.avatar {
         </tr>
 
       </table>
-
+---->
 	
 </body>
 </html>
