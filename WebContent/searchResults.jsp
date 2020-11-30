@@ -141,7 +141,7 @@ td, th {
 
 <body>
 <div class="topnav">
-		<a class="active" href="homepage.jsp">Home</a> <a href="#about">About</a>
+		<a class="active" href="homepage.jsp">Home</a> <a href="about.jsp">About</a>
 		<a href="#contact">Contact</a>
 		<div class="topnav2">
 			<button onclick="homepageDropdown()" class="dropdownbtn"><img
