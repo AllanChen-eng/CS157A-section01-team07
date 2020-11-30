@@ -51,6 +51,9 @@ public class AdminSearchServlet extends HttpServlet {
 		String cityA = request.getParameter("cityAVal");
 		String timeD = request.getParameter("departureTimeVal");
 		String timeA = request.getParameter("timeAVal");
+		int passenger_capacity = Integer.parseInt(request.getParameter("passenger_capacity"));
+		String status = request.getParameter("status");
+		String airline = request.getParameter("airline");
 
 		AdminSearch_Person asp = new AdminSearch_Person();
 		AdminSearch adminSearch = new AdminSearch();
@@ -59,6 +62,10 @@ public class AdminSearchServlet extends HttpServlet {
 		adminSearch.setDepartureTime(timeD);
 		adminSearch.setCityA(cityA);
 		adminSearch.setArrivalTime(timeA);
+		adminSearch.setAirline(airline);
+		adminSearch.setPassenger_capacity(passenger_capacity);
+		adminSearch.setStatus(status);
+		
 		
 		asp.doAdminSearch(departs, arrives);
 		
@@ -73,6 +80,12 @@ public class AdminSearchServlet extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		try {
+			asp.adminInsertFlightInformation(adminSearch);
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		
 		String table = asp.getAdminHTMLTable();

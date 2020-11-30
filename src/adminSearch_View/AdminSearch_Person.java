@@ -10,7 +10,7 @@ import adminSearch_Model.AdminSearch;
 
 public class AdminSearch_Person {
 	String user = "root";
-	String password = "ALuckyNugget7";
+	String password = "Winter005#";
 
 	private Connection conn;
 	private ResultSet rs;
@@ -142,6 +142,29 @@ public class AdminSearch_Person {
 				ps.setString(1, adminSearch.getCityA());
 				ps.setString(2, adminSearch.getDepartureTime());
 				ps.setInt(3, adminSearch.getFlight_id());
+					
+				System.out.println(ps);
+					
+				res = ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			return res;
+	}
+	
+	public int adminInsertFlightInformation(AdminSearch adminSearch) throws ClassNotFoundException {
+		String INSERT_FLIGHT_SQL = "INSERT INTO FlightCatch.Flight" + " (flight_id, passenger_capacity, status, airline) VALUES " + " (?, ?, ?, ?);";
+		
+		int res = 0;
+		Class.forName("com.mysql.jdbc.Driver");
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", 
+				user, password);
+			PreparedStatement ps = connection.prepareStatement(INSERT_FLIGHT_SQL)){
+				ps.setInt(1, adminSearch.getFlight_id());
+				ps.setInt(2, adminSearch.getPassenger_capacity());
+				ps.setString(3, adminSearch.getStatus());
+				ps.setString(4, adminSearch.getAirline());
 					
 				System.out.println(ps);
 					

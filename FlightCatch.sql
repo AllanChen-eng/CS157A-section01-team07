@@ -72,23 +72,33 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `Arrives`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Arrives` (
   `city` varchar(45) NOT NULL,
   `time` time DEFAULT NULL,
-  `flight_id` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`city`)
+  `flight_id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`flight_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 --
 -- Dumping data for table `Arrives`
 --
 
 LOCK TABLES `Arrives` WRITE;
 /*!40000 ALTER TABLE `Arrives` DISABLE KEYS */;
-INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00','2'),('Cairo','17:15:00','15'),('Delhi','21:40:00','17'),('Istanbul','03:20:00','10'),('London','13:45:00','5'),('Mexico City','18:50:00','9'),('Moscow','18:20:00','1'),('Mumbal','09:30:00','18'),('Osaka','07:50:00','8'),('Paris','08:30:00','3'),('San Francisco','11:45:00','7'),('Sao Paulo','15:20:00','11'),('Seoul','10:30:00','6'),('Shanghai','22:30:00','14'),('Tokyo','01:30:00','4');
+INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00','1'),
+			     ('Cairo','17:15:00','2'),
+                             ('Delhi','21:40:00','3'),
+                             ('Istanbul','03:20:00','4'),
+                             ('London','13:45:00','5'),
+                             ('Mexico City','18:50:00','6'),
+                             ('Moscow','18:20:00','7'),
+                             ('Mumbai','09:30:00','8'),
+                             ('Osaka','07:50:00','9'),
+                             ('Paris','08:30:00','10'),
+                             ('San Francisco','11:45:00','11'),
+                             ('Sao Paulo','15:20:00','12'),
+                             ('Seoul','10:30:00','13'),
+                             ('Shanghai','22:30:00','14'),
+                             ('Tokyo','01:30:00','15');
 /*!40000 ALTER TABLE `Arrives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,24 +192,33 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `Departs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Departs` (
   `city` varchar(45) NOT NULL,
-  `flight_id` int NOT NULL,
+  `flight_id` int NOT NULL AUTO_INCREMENT,
   `time` time DEFAULT NULL,
-  PRIMARY KEY (`city`,`flight_id`)
+  PRIMARY KEY (`flight_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `Departs`
 --
 
 LOCK TABLES `Departs` WRITE;
-/*!40000 ALTER TABLE `Departs` DISABLE KEYS */;
-INSERT INTO `Departs` VALUES ('Austin',4,'21:30:00'),('Beijing',14,'22:20:00'),('Berlin',7,'16:50:00'),('Delhi',13,'18:20:00'),('Jerusalem',9,'12:10:00'),('London',1,'01:20:00'),('Los Angeles',2,'03:20:00'),('Madrid',5,'22:45:00'),('New York',3,'05:20:00'),('Osaka',16,'13:00:00'),('Pretoria',8,'14:20:00'),('Rio De Janeiro',12,'16:20:00'),('Rome',6,'17:15:00'),('San Francisco',10,'08:50:00'),('Sao Paulo',15,'19:30:00'),('Topeka',11,'06:50:00');
-/*!40000 ALTER TABLE `Departs` ENABLE KEYS */;
+INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),
+								('Beijing',2,'22:20:00'),
+                                ('Berlin',3,'16:50:00'),
+                                ('Delhi',4,'18:20:00'),
+                                ('Jerusalem',5,'12:10:00'),
+                                ('London',6,'01:20:00'),
+                                ('Los Angeles',7,'03:20:00'),
+                                ('Madrid',8,'22:45:00'),
+                                ('New York',9,'05:20:00'),
+                                ('Osaka',10,'13:00:00'),
+                                ('Pretoria',11,'14:20:00'),
+                                ('Rio De Janeiro',12,'16:20:00'),
+                                ('Rome',13,'17:15:00'),
+                                ('San Francisco',14,'08:50:00'),
+                                ('Sao Paulo',15,'19:30:00');
 UNLOCK TABLES;
 
 --

@@ -127,6 +127,30 @@ body {
 	padding-top: 15px;
 }
 
+.search-container #PassengerCapacity-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.search-container #Status-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.search-container #Airline-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
 .search-container #City-bar {
 	display: inline-block;
 	width: 250px;
@@ -231,28 +255,39 @@ body {
 			</button>
 		</form>
 	</div>
-	
+
 	<div class="logo2">
 		<p>Admin Edit to Departs Table</p>
 	</div>
-	
+
 	<div class="search-container">
 		<form action="adminSearch" method="GET">
 			<input id="City-bar" type="text" name="cityDVal"
-				placeholder="City"> <input id="Time-bar" type="text"
-				name="departureTimeVal" placeholder="Time">
-				
-				
-					<div class="logo2">
-		<p>Admin Edit to Arrives Table</p>
-	</div>
-					<div class="search-container">
+				placeholder="Departing City"> <input id="Time-bar"
+				type="text" name="departureTimeVal" placeholder="Departing Time">
+
+
+			<div class="logo2">
+				<p>Admin Edit to Arrives Table</p>
+			</div>
+			<div class="search-container">
 				<input id="City-bar" type="text" name="cityAVal"
-				placeholder="City"> <input id="Time-bar" type="text"
-				name="timeAVal" placeholder="Time">
-					</div>
+					placeholder="Arriving City"> <input id="Time-bar"
+					type="text" name="timeAVal" placeholder="Arriving Time">
+			</div>
+
+			<div class="logo2">
+				<p>Admin Edit to Flights Table</p>
+			</div>
+			<div class="search-container">
+				<input id="PassengerCapacity-bar" type="text" name="passenger_capacity"
+					placeholder="Enter passenger capacity"> <input id="Status-bar"
+					type="text" name="status" placeholder="Status of Flight"> <input
+					id="Airline-bar" type="text" name="airline"
+					placeholder="Enter Airline">
+			</div>
 			<button id="search-button" type="submit">
-				<i class="fas fa-arrow-right"></i>
+				<i class="fa fa-arrow-right"></i>
 			</button>
 		</form>
 	</div>
