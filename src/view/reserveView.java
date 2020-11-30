@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class reserveView {
 	String user = "root";
-	String password = "ALuckyNugget7"; //put in your password to the MySQL Workbench database
+	String password = "Winter005#"; //put in your password to the MySQL Workbench database
 
 	public boolean reserveTicket(int flightID) throws ClassNotFoundException {
 		
