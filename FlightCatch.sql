@@ -72,33 +72,23 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `Arrives`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Arrives` (
   `city` varchar(45) NOT NULL,
   `time` time DEFAULT NULL,
   `flight_id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`flight_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Dumping data for table `Arrives`
 --
 
 LOCK TABLES `Arrives` WRITE;
 /*!40000 ALTER TABLE `Arrives` DISABLE KEYS */;
-INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00','1'),
-			     ('Cairo','17:15:00','2'),
-                             ('Delhi','21:40:00','3'),
-                             ('Istanbul','03:20:00','4'),
-                             ('London','13:45:00','5'),
-                             ('Mexico City','18:50:00','6'),
-                             ('Moscow','18:20:00','7'),
-                             ('Mumbai','09:30:00','8'),
-                             ('Osaka','07:50:00','9'),
-                             ('Paris','08:30:00','10'),
-                             ('San Francisco','11:45:00','11'),
-                             ('Sao Paulo','15:20:00','12'),
-                             ('Seoul','10:30:00','13'),
-                             ('Shanghai','22:30:00','14'),
-                             ('Tokyo','01:30:00','15');
+INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00',1),('Cairo','17:15:00',2),('Delhi','21:40:00',3),('Istanbul','03:20:00',4),('London','13:45:00',5),('Mexico City','18:50:00',6),('Moscow','18:20:00',7),('Mumbai','09:30:00',8),('Osaka','07:50:00',9),('Paris','08:30:00',10),('San Francisco','11:45:00',11),('Sao Paulo','15:20:00',12),('Seoul','10:30:00',13),('Shanghai','22:30:00',14),('Tokyo','01:30:00',15),('Test1','12:00:00',16);
 /*!40000 ALTER TABLE `Arrives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,33 +182,24 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `Departs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Departs` (
   `city` varchar(45) NOT NULL,
   `flight_id` int NOT NULL AUTO_INCREMENT,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`flight_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `Departs`
 --
 
 LOCK TABLES `Departs` WRITE;
-INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),
-								('Beijing',2,'22:20:00'),
-                                ('Berlin',3,'16:50:00'),
-                                ('Delhi',4,'18:20:00'),
-                                ('Jerusalem',5,'12:10:00'),
-                                ('London',6,'01:20:00'),
-                                ('Los Angeles',7,'03:20:00'),
-                                ('Madrid',8,'22:45:00'),
-                                ('New York',9,'05:20:00'),
-                                ('Osaka',10,'13:00:00'),
-                                ('Pretoria',11,'14:20:00'),
-                                ('Rio De Janeiro',12,'16:20:00'),
-                                ('Rome',13,'17:15:00'),
-                                ('San Francisco',14,'08:50:00'),
-                                ('Sao Paulo',15,'19:30:00');
+/*!40000 ALTER TABLE `Departs` DISABLE KEYS */;
+INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),('Beijing',2,'22:20:00'),('Berlin',3,'16:50:00'),('Delhi',4,'18:20:00'),('Jerusalem',5,'12:10:00'),('London',6,'01:20:00'),('Los Angeles',7,'03:20:00'),('Madrid',8,'22:45:00'),('New York',9,'05:20:00'),('Osaka',10,'13:00:00'),('Pretoria',11,'14:20:00'),('Rio De Janeiro',12,'16:20:00'),('Rome',13,'17:15:00'),('San Francisco',14,'08:50:00'),('Sao Paulo',15,'19:30:00'),('test',16,'12:00:00');
+/*!40000 ALTER TABLE `Departs` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -258,8 +239,9 @@ CREATE TABLE `Flight` (
   `passenger_capacity` int DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   `airline` varchar(45) DEFAULT NULL,
+  `current_capacity` int DEFAULT NULL,
   PRIMARY KEY (`flight_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +250,7 @@ CREATE TABLE `Flight` (
 
 LOCK TABLES `Flight` WRITE;
 /*!40000 ALTER TABLE `Flight` DISABLE KEYS */;
-INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES'),(2,500,'DELAYED','QATAR AIRLINES'),(3,550,'ON TIME','UNITED AIRLINES'),(4,750,'DEPARTING','UNITED AIRLINES'),(5,1225,'ON TIME','ALLEGIANT AIR'),(6,1400,'BOARDING','ALASKA AIRLINES'),(7,1225,'ON TIME','GERMAN AIRLINE'),(8,800,'LANDING','UNITED AIRLINES'),(9,550,'BOARDING','SOUTWEST AIRLINES'),(10,560,'DEPARTING','JETBLUE'),(11,570,'ARRIVED','SPIRIT AIRLINES'),(12,800,'DIVERTED','JETBLUE'),(13,300,'ON TIME','JETBLUE'),(14,860,'DELAYED','CATHAY PACIFIC'),(15,930,'ON TIME','JETBLUE');
+INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',1),(2,500,'DELAYED','QATAR AIRLINES',0),(3,550,'ON TIME','UNITED AIRLINES',0),(4,750,'DEPARTING','UNITED AIRLINES',0),(5,1225,'ON TIME','ALLEGIANT AIR',0),(6,1400,'BOARDING','ALASKA AIRLINES',0),(7,1225,'ON TIME','GERMAN AIRLINE',0),(8,800,'LANDING','UNITED AIRLINES',0),(9,550,'BOARDING','SOUTWEST AIRLINES',0),(10,560,'DEPARTING','JETBLUE',0),(11,570,'ARRIVED','SPIRIT AIRLINES',0),(12,800,'DIVERTED','JETBLUE',0),(13,300,'ON TIME','JETBLUE',0),(14,860,'DELAYED','CATHAY PACIFIC',0),(15,930,'ON TIME','JETBLUE',NULL),(16,0,NULL,NULL,NULL),(17,0,'CANCELLED','JetBlue',NULL),(18,0,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `Flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,6 +375,32 @@ INSERT INTO `Role` VALUES (1,0,0),(2,1,0),(3,1,0),(4,1,1),(5,1,1);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Sells`
+--
+
+DROP TABLE IF EXISTS `Sells`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Sells` (
+  `ticket_number` int NOT NULL,
+  `flight_id` int DEFAULT NULL,
+  PRIMARY KEY (`ticket_number`),
+  KEY `flight_id_idx` (`flight_id`),
+  CONSTRAINT `flight_id` FOREIGN KEY (`flight_id`) REFERENCES `Flight` (`flight_id`),
+  CONSTRAINT `ticket_number` FOREIGN KEY (`ticket_number`) REFERENCES `Tickets` (`ticket_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Sells`
+--
+
+LOCK TABLES `Sells` WRITE;
+/*!40000 ALTER TABLE `Sells` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Sells` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Tickets`
 --
 
@@ -401,8 +409,8 @@ DROP TABLE IF EXISTS `Tickets`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Tickets` (
   `ticket_number` int NOT NULL AUTO_INCREMENT,
-  `flight_id` int NOT NULL,
-  PRIMARY KEY (`ticket_number`,`flight_id`)
+  `fligh_time` time DEFAULT NULL,
+  PRIMARY KEY (`ticket_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -412,7 +420,7 @@ CREATE TABLE `Tickets` (
 
 LOCK TABLES `Tickets` WRITE;
 /*!40000 ALTER TABLE `Tickets` DISABLE KEYS */;
-INSERT INTO `Tickets` VALUES (1,15),(2,14),(3,13),(4,12),(5,11),(6,10),(7,9),(8,8),(9,7),(10,6),(11,5),(12,4),(13,3),(14,2),(15,1);
+INSERT INTO `Tickets` VALUES (1,'00:00:15'),(2,'00:00:14'),(3,'00:00:13'),(4,'00:00:12'),(5,'00:00:11'),(6,'00:00:10'),(7,'00:00:09'),(8,'00:00:08'),(9,'00:00:07'),(10,'00:00:06'),(11,'00:00:05'),(12,'00:00:04'),(13,'00:00:03'),(14,'00:00:02'),(15,'00:00:01');
 /*!40000 ALTER TABLE `Tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,4 +458,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-
+-- Dump completed on 2020-11-30  0:06:35
