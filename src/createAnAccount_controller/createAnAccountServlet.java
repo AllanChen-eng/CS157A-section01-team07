@@ -16,19 +16,21 @@ import createAnAccount_View.createAnAccount_Person;
 public class createAnAccountServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private createAnAccount_Person cap = new createAnAccount_Person();
-      
-    public createAnAccountServlet() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public createAnAccountServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+
 		RequestDispatcher d = request.getRequestDispatcher("/createAnAccount.jsp");
 		d.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String emailAddress = request.getParameter("emailAddress");
@@ -38,9 +40,9 @@ public class createAnAccountServlet extends HttpServlet {
 		int zipcode = Integer.parseInt(request.getParameter("zipcode"));
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		
+
 		createAnAccount caa = new createAnAccount();
-		
+
 		caa.setFirstName(firstName);
 		caa.setLastName(lastName);
 		caa.setEmailAddress(emailAddress);
@@ -50,16 +52,16 @@ public class createAnAccountServlet extends HttpServlet {
 		caa.setZipcode(zipcode);
 		caa.setUsername(username);
 		caa.setPassword(password);
-		
+
 		try {
 			cap.registerAccount(caa);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		RequestDispatcher d = request.getRequestDispatcher("/accountSuccessful.jsp");
 		d.forward(request, response);
-		
+
 	}
 
 }

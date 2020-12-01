@@ -46,6 +46,8 @@ public class searchServlet extends HttpServlet {
 
 		String departs = request.getParameter("departVal");
 		String arrives = request.getParameter("arriveVal");
+		String username = (String) request.getSession().getAttribute("username");
+		System.out.println(username);
 
 		search_Query sq = new search_Query();
 		sq.doSearch(departs, arrives);
