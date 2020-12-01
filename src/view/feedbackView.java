@@ -99,7 +99,7 @@ public class feedbackView {
 			while (this.rs.next()) {
 				feedback feedback1 = new feedback();
 				feedback1.setCommentID(this.rs.getInt("comment_id"));
-				feedback1.setRating(this.rs.getInt("rating"));
+				feedback1.setRating(this.rs.getDouble("rating"));
 				feedback1.setComment(this.rs.getString("comment"));
 
 				feedback1.setAirline(this.rs2.getString("airline"));
