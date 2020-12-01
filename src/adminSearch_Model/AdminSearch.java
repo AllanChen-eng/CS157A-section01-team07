@@ -3,6 +3,9 @@ package adminSearch_Model;
 public class AdminSearch {
 	private  int flight_id;
 	private  int passenger_capacity;
+	private int firstClass;
+	private int businessClass;
+	private int economyClass;
 	private  String status;
 	private  String Airline;
 	private  String departs;
@@ -11,6 +14,30 @@ public class AdminSearch {
 	private String arrival_time;
 	private  String cityA;
 	private String cityD;
+	
+	public int getFirstClass() {
+		return firstClass;
+	}
+
+	public void setFirstClass(int firstClass) {
+		this.firstClass = firstClass;
+	}
+
+	public int getBusinessClass() {
+		return businessClass;
+	}
+
+	public void setBusinessClass(int businessClass) {
+		this.businessClass = businessClass;
+	}
+
+	public int getEconomyClass() {
+		return economyClass;
+	}
+
+	public void setEconomyClass(int economyClass) {
+		this.economyClass = economyClass;
+	}
 
 	public int getFlight_id() {
 		return flight_id;

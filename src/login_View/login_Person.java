@@ -10,7 +10,7 @@ import login_Model.Login;
 
 public class login_Person {
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "Winter005#"; // put in your password to the MySQL Workbench database
 
 	public boolean login(Login log) throws ClassNotFoundException {
 

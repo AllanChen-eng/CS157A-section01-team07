@@ -54,6 +54,9 @@ public class AdminSearchServlet extends HttpServlet {
 		int passenger_capacity = Integer.parseInt(request.getParameter("passengerCapacity"));
 		String status = request.getParameter("status");
 		String airline = request.getParameter("airline");
+		int firstClass = Integer.parseInt(request.getParameter("first"));
+		int businessClass = Integer.parseInt(request.getParameter("business"));
+		int economyClass = Integer.parseInt(request.getParameter("economy"));
 
 		AdminSearch_Person asp = new AdminSearch_Person();
 		AdminSearch adminSearch = new AdminSearch();
@@ -65,6 +68,9 @@ public class AdminSearchServlet extends HttpServlet {
 		adminSearch.setAirline(airline);
 		adminSearch.setPassenger_capacity(passenger_capacity);
 		adminSearch.setStatus(status);
+		adminSearch.setFirstClass(firstClass);
+		adminSearch.setBusinessClass(businessClass);
+		adminSearch.setEconomyClass(economyClass);
 		
 		
 //		asp.doAdminSearch(departs, arrives);

@@ -10,7 +10,7 @@ import admin_Model.Admin;
 
 public class admin_Person {
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "Winter005#"; // put in your password to the MySQL Workbench database
 
 	public boolean admin_login(Admin admin) throws ClassNotFoundException {
 

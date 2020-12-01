@@ -167,6 +167,30 @@ body {
 	border: 2px solid #000000;
 }
 
+.search-container #First-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.search-container #Business-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.search-container #Economy-bar {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
 .logo {
 	text-align: center;
 	padding-top: 100px;
@@ -249,8 +273,15 @@ body {
 				<input id="PassengerCapacity-bar" type="text"
 					name="passengerCapacity" placeholder="Enter passenger capacity">
 				<input id="Status-bar" type="text" name="status"
-					placeholder="Status of Flight"> <input id="Airline-bar"
+					placeholder="Status of Flight"> 
+				<input id="Airline-bar"
 					type="text" name="airline" placeholder="Enter Airline">
+				<input id="First-bar"
+					type="text" name="first" placeholder="Enter First Class Capacity">
+				<input id="Business-bar"
+					type="text" name="business" placeholder="Enter Business Class Capacity">
+				<input id="Economy-bar"
+					type="text" name="economy" placeholder="Enter Economy Class Capacity">
 			</div>
 			<button id="search-button" type="submit">
 				<i class="fa fa-arrow-right"></i>
