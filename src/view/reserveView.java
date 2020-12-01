@@ -10,7 +10,7 @@ import model.reserve;
 
 public class reserveView {
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "ALuckyNugget7"; // put in your password to the MySQL Workbench database
 	private ResultSet rs;
 	private ResultSet rs1;
 	private Connection connection;
@@ -20,7 +20,13 @@ public class reserveView {
 		String updateSQL = "UPDATE flight set current_capacity=current_capacity+1 WHERE flight_id=?;";
 		String currentCap = "SELECT current_capacity FROM flight where flight_id = ?";
 		String ticketNumberSQL = "INSERT INTO Sells(ticket_number, flight_id) VALUES ((SELECT ticket_number FROM tickets WHERE ticket_number = ?), ?)";
-		String query = "SELECT * FROM FlightCatch.Tickets WHERE ticket_number IN (SELECT current_capacity FROM FlightCatch.Flight WHERE flight_id= ?);";
+		String query = "SELECT * FROM FlightCatch.Tickets,FlightCatch.Flight,FlightCatch.Arrives, FlightCatch.Departs\n" + 
+				" WHERE ticket_number IN (SELECT current_capacity FROM FlightCatch.Flight WHERE flight_id= ?)\n" + 
+				" AND Flight.flight_id=? \n" + 
+				" AND Departs.flight_id=?\n" + 
+				" AND Arrives.flight_id=?;\n" + 
+				"\n" + 
+				"";;
 		try {
 			int cap = 0;
 			Class.forName("com.mysql.jdbc.Driver");
@@ -34,6 +40,9 @@ public class reserveView {
 			ps.setInt(1, flightID);
 
 			ps2.setInt(1, flightID);
+			ps2.setInt(2, flightID);
+			ps2.setInt(3, flightID);
+			ps2.setInt(4, flightID);
 			System.out.println(ps);
 			// int rs =
 			ps.executeUpdate();
@@ -65,6 +74,22 @@ public class reserveView {
 		table += "</th>";
 
 		table += "<th>";
+		table += "Departs";
+		table += "</th>";
+		
+		table += "<th>";
+		table += "Departure Time";
+		table += "</th>";
+		
+		table += "<th>";
+		table += "Arrives";
+		table += "</th>";
+		
+		table += "<th>";
+		table += "Arrival Time";
+		table += "</th>";
+		
+		table += "<th>";
 		table += "Seat Number";
 		table += "</th>";
 
@@ -74,13 +99,35 @@ public class reserveView {
 			while (this.rs.next()) {
 				reserve reserve1 = new reserve();
 				reserve1.setTicketNumber(this.rs.getInt("ticket_number"));
+				reserve1.setDeparts(this.rs.getString("Departs.city"));
+				reserve1.setArrives(this.rs.getString("Arrives.city"));
+				reserve1.setDeparture_time(this.rs.getTime("Departs.time").toString());
+				reserve1.setArrival_time(this.rs.getTime("Arrives.time").toString());
 				reserve1.setSeatNumber(this.rs.getInt("seat_number"));
+				
+				
 
 				table += "<tr>";
 				table += "<td>";
 				table += reserve1.getTicketNumber();
 				table += "</td>";
-
+				
+				table += "<td>";
+				table += reserve1.getDeparts();
+				table += "</td>";
+				
+				table += "<td>";
+				table += reserve1.getDeparture_time();
+				table += "</td>";
+				
+				table += "<td>";
+				table += reserve1.getArrives();
+				table += "</td>";
+				
+				table += "<td>";
+				table += reserve1.getArrival_time();
+				table += "</td>";
+				
 				table += "<td>";
 				table += reserve1.getSeatNumber();
 				table += "</td>";

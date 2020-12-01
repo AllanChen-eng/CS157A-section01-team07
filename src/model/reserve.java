@@ -10,9 +10,71 @@ public class reserve {
 	private int passenger_capacity;
 	private int seat_number;
 	private String username;
+	private static String status;
+	private static String Airline;
+	private static String departs;
+	private static String arrives;
+	private static String departure_time;
+	private static String arrival_time;
 
 	public int getEconomyClass() {
 		return economyClass;
+	}
+
+	public int getSeat_number() {
+		return seat_number;
+	}
+
+	public void setSeat_number(int seat_number) {
+		this.seat_number = seat_number;
+	}
+
+	public static String getStatus() {
+		return status;
+	}
+
+	public static void setStatus(String status) {
+		reserve.status = status;
+	}
+
+	public String getAirline() {
+		return Airline;
+	}
+
+	public void setAirline(String airline) {
+		Airline = airline;
+	}
+
+	public String getDeparts() {
+		return departs;
+	}
+
+	public void setDeparts(String departs) {
+		reserve.departs = departs;
+	}
+
+	public  String getArrives() {
+		return arrives;
+	}
+
+	public void setArrives(String arrives) {
+		reserve.arrives = arrives;
+	}
+
+	public String getDeparture_time() {
+		return departure_time;
+	}
+
+	public void setDeparture_time(String departure_time) {
+		reserve.departure_time = departure_time;
+	}
+
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public void setArrival_time(String arrival_time) {
+		reserve.arrival_time = arrival_time;
 	}
 
 	public void setEconomyClass(int economyClass) {
