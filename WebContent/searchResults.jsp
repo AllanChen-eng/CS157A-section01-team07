@@ -151,18 +151,22 @@ td, th {
 	
 	<div id="homeDropdown" class=dropdown-content>
 		<a class="active2" href="login.jsp">Logout</a>
+			<div id="homeDropdown1" class=dropdown-content>
+		<a class="active2" href="feedback.jsp">Rate your Flight</a>
+	</div>
 	</div>
 	
 	<script>
 		function homepageDropdown() {
 			document.getElementById("homeDropdown").classList.toggle("show");
+			document.getElementById("homeDropdown1").classList.toggle("show");
 		}
 
 		window.onclick = function(event) {
 			if (!event.target.matches('.dropdownbtn')) {
 				var loginDropdownContent = document.getElementsByClassName("dropdown-content");
 				var i;
-				for (i = 0; i < 1; i++) {
+				for (i = 0; i < 4; i++) {
 					var showDropdown = loginDropdownContent[i];
 					if (showDropdown.classList.contains('show')) {
 						showDropdown.classList.remove('show');

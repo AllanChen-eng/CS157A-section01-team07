@@ -195,7 +195,7 @@ body {
 			if (!event.target.matches('.dropdownbtn')) {
 				var loginDropdownContent = document.getElementsByClassName("dropdown-content");
 				var i;
-				for (i = 0; i < 3; i++) {
+				for (i = 0; i < 4; i++) {
 					var showDropdown = loginDropdownContent[i];
 					if (showDropdown.classList.contains('show')) {
 						showDropdown.classList.remove('show');
