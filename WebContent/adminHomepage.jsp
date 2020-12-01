@@ -167,29 +167,6 @@ body {
 	border: 2px solid #000000;
 }
 
-.search-container #Depart-bar {
-	display: inline-block;
-	width: 250px;
-	height: 50px;
-	border-radius: 15px;
-	border: 2px solid #000000;
-}
-
-.search-container #Arrive-bar {
-	display: inline-block;
-	width: 250px;
-	height: 50px;
-	border-radius: 15px;
-	border: 2px solid #000000;
-}
-
-.search-container #search-button {
-	height: 50px;
-	width: 75px;
-	border-radius: 15px;
-	border: 2px solid #000000;
-}
-
 .logo {
 	text-align: center;
 	padding-top: 100px;
@@ -209,7 +186,7 @@ body {
 
 	<div class="topnav">
 		<a class="active" href="adminHomepage.jsp">Home</a> <a href="adminAbout.jsp">About</a>
-		<a href="#contact">Contact</a>
+		<a href="#contact">Contact</a> <a href="adminSearch.jsp">Search</a>
 		<div class="topnav2">
 			<button onclick="adminHomepageDropdown()" class="dropdownbtn">
 				<img
@@ -245,23 +222,12 @@ body {
 		<p>FlightCatch Admin Homepage</p>
 	</div>
 
-	<div class="search-container">
-		<form action="adminSearch" method="GET">
-			<input id="Depart-bar" type="text" name="departVal"
-				placeholder="Depart"> <input id="Arrive-bar" type="text"
-				name="arriveVal" placeholder="Arrive">
-			<button id="search-button" type="submit">
-				<i class="fa fa-search"></i>
-			</button>
-		</form>
-	</div>
-
 	<div class="logo2">
 		<p>Admin Edit to Departs Table</p>
 	</div>
 
 	<div class="search-container">
-		<form action="adminSearch" method="GET">
+		<form action="adminHomepage" method="GET">
 			<input id="City-bar" type="text" name="cityDVal"
 				placeholder="Departing City"> <input id="Time-bar"
 				type="text" name="departureTimeVal" placeholder="Departing Time">
@@ -280,11 +246,11 @@ body {
 				<p>Admin Edit to Flights Table</p>
 			</div>
 			<div class="search-container">
-				<input id="PassengerCapacity-bar" type="text" name="passenger_capacity"
-					placeholder="Enter passenger capacity"> <input id="Status-bar"
-					type="text" name="status" placeholder="Status of Flight"> <input
-					id="Airline-bar" type="text" name="airline"
-					placeholder="Enter Airline">
+				<input id="PassengerCapacity-bar" type="text"
+					name="passengerCapacity" placeholder="Enter passenger capacity">
+				<input id="Status-bar" type="text" name="status"
+					placeholder="Status of Flight"> <input id="Airline-bar"
+					type="text" name="airline" placeholder="Enter Airline">
 			</div>
 			<button id="search-button" type="submit">
 				<i class="fa fa-arrow-right"></i>
