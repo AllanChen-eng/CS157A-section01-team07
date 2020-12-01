@@ -74,7 +74,7 @@ public void insertComment(String comment,double rating) {
 		String table = "";
 		table += "<table style='width:100%'>";
 		table +="<tr>";
-		table +=" <h1> Other Customer's ExeperiencesL </h1>";
+		table +=" <h1> Other Customer's Exeperiences: </h1>";
 		table +="</tr>";
 		table += "<tr>";
 		table += "<th>";
