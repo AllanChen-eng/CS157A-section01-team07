@@ -233,25 +233,39 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `Flight`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Flight` (
   `flight_id` int NOT NULL AUTO_INCREMENT,
   `passenger_capacity` int DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   `airline` varchar(45) DEFAULT NULL,
   `current_capacity` int DEFAULT NULL,
+  `first_class` int DEFAULT NULL,
+  `business_class` int DEFAULT NULL,
+  `economy_class` int DEFAULT NULL,
   PRIMARY KEY (`flight_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
 --
 -- Dumping data for table `Flight`
 --
 
 LOCK TABLES `Flight` WRITE;
 /*!40000 ALTER TABLE `Flight` DISABLE KEYS */;
-INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',4),(2,500,'DELAYED','QATAR AIRLINES',0),(3,550,'ON TIME','UNITED AIRLINES',0),(4,750,'DEPARTING','UNITED AIRLINES',0),(5,1225,'ON TIME','ALLEGIANT AIR',0),(6,1400,'BOARDING','ALASKA AIRLINES',0),(7,1225,'ON TIME','GERMAN AIRLINE',0),(8,800,'LANDING','UNITED AIRLINES',0),(9,550,'BOARDING','SOUTWEST AIRLINES',0),(10,560,'DEPARTING','JETBLUE',0),(11,570,'ARRIVED','SPIRIT AIRLINES',0),(12,800,'DIVERTED','JETBLUE',0),(13,300,'ON TIME','JETBLUE',0),(14,860,'DELAYED','CATHAY PACIFIC',0),(15,930,'ON TIME','JETBLUE',0),(16,0,NULL,NULL,0),(17,0,'CANCELLED','JetBlue',0),(18,0,NULL,NULL,0);
+INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',4, 40, 60, 100),
+							(2,500,'DELAYED','QATAR AIRLINES',0, 100, 150, 250),
+                            (3,550,'ON TIME','UNITED AIRLINES',0, 110, 165, 275),
+                            (4,750,'DEPARTING','UNITED AIRLINES',0, 150, 225, 375),
+                            (5,600,'ON TIME','ALLEGIANT AIR',0, 120, 180, 300),
+                            (6,300,'BOARDING','ALASKA AIRLINES',0, 60, 90, 150),
+                            (7,400,'ON TIME','GERMAN AIRLINE',0, 80, 120, 200),
+                            (8,800,'LANDING','UNITED AIRLINES',0, 160, 240, 400),
+                            (9,550,'BOARDING','SOUTWEST AIRLINES',0, 110, 165, 275),
+                            (10,560,'DEPARTING','JETBLUE',0, 112, 168, 280),
+                            (11,400,'ARRIVED','SPIRIT AIRLINES',0, 80, 120, 200),
+                            (12,800,'DIVERTED','JETBLUE', 0, 160, 240, 400),
+                            (13,300,'ON TIME','JETBLUE',0, 60, 90, 150),
+                            (14,560,'DELAYED','CATHAY PACIFIC', 0, 112, 168, 280),
+                            (15,550,'ON TIME','JETBLUE', 0, 110, 165, 275),
+                            (16,0,NULL,NULL,0, 0, 0, 0);
 /*!40000 ALTER TABLE `Flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
