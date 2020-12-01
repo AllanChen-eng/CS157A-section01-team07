@@ -17,16 +17,10 @@ public class reserveView {
 
 	public void reserveTicket(int flightID) {
 
-		String updateSQL = "UPDATE flight set current_capacity=current_capacity+1 WHERE flight_id=?;";
-		String currentCap = "SELECT current_capacity FROM flight where flight_id = ?";
-		String ticketNumberSQL = "INSERT INTO Sells(ticket_number, flight_id) VALUES ((SELECT ticket_number FROM tickets WHERE ticket_number = ?), ?)";
-		String query = "SELECT * FROM FlightCatch.Tickets,FlightCatch.Flight,FlightCatch.Arrives, FlightCatch.Departs\n" + 
-				" WHERE ticket_number IN (SELECT current_capacity FROM FlightCatch.Flight WHERE flight_id= ?)\n" + 
-				" AND Flight.flight_id=? \n" + 
-				" AND Departs.flight_id=?\n" + 
-				" AND Arrives.flight_id=?;\n" + 
-				"\n" + 
-				"";;
+		String updateSQL = "UPDATE flight set current_capacity=current_capacity+1 WHERE flight_id = ?;";
+		String currentCap = "SELECT current_capacity FROM flight where flight_id = ?;";
+		String ticketNumberSQL = "INSERT INTO Sells(ticket_number, flight_id) VALUES ((SELECT ticket_number FROM tickets WHERE ticket_number = ?), ?);";
+		String query = "SELECT * FROM FlightCatch.Tickets,FlightCatch.Flight,FlightCatch.Arrives , FlightCatch.Departs WHERE ticket_number IN ( SELECT current_capacity FROM FlightCatch.Flight WHERE flight_id = ?) AND Flight.flight_id = ? AND Departs.flight_id= ? AND Arrives.flight_id= ? ;";
 		try {
 			int cap = 0;
 			Class.forName("com.mysql.jdbc.Driver");
@@ -96,7 +90,7 @@ public class reserveView {
 		table += "</tr>";
 
 		try {
-			while (this.rs.next()) {
+			while(this.rs.next()) {
 				reserve reserve1 = new reserve();
 				reserve1.setTicketNumber(this.rs.getInt("ticket_number"));
 				reserve1.setDeparts(this.rs.getString("Departs.city"));

@@ -155,7 +155,7 @@ span.psw {
 <body>
 	<div class="topnav">
 		<a class="active" href="login.jsp">Home</a> <a href="adminAbout.jsp">About</a> <a
-			href="#contact">Contact</a> <a href="homepage.jsp">Search</a>
+			href="adminContact.jsp">Contact</a> <a href="homepage.jsp">Search</a>
 		<div class="topnav2">
 			<a class="active2" href="login.jsp"><img src="https://img.icons8.com/dusk/16/000000/add-user-group-man-woman.png"/></a>
 		</div>

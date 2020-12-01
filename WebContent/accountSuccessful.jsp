@@ -45,8 +45,8 @@ body {
 </head>
 <body>
 	<div class="topnav">
-		<a class="active" href="login.jsp">Home</a> <a href="#about">About</a>
-		<a href="#contact">Contact</a>
+		<a class="active" href="login.jsp">Home</a> <a href="about.jsp">About</a>
+		<a href="contact.jsp">Contact</a>
 	</div>
 
 	<div>

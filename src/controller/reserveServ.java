@@ -63,9 +63,9 @@ public class reserveServ extends HttpServlet {
 			int ticketNumber = 0;
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightcatch?useSSL=false",
-					"root", "password");
+					"root", "Winter005#");
 			String query = "INSERT INTO bought (user_id, ticket_number, flight_id) VALUES ((SELECT user_id FROM users WHERE username = ?), ?, ?);";
-			String currentCap = "SELECT current_capacity FROM flight where flight_id = ?";
+			String currentCap = "SELECT current_capacity FROM flight where flight_id = ?;";
 			PreparedStatement ps = conn.prepareStatement(query);
 			PreparedStatement ps1 = conn.prepareStatement(currentCap);
 			ps1.setInt(1, flightID);
@@ -86,7 +86,7 @@ public class reserveServ extends HttpServlet {
 		request.setAttribute("username", username);
 		request.getRequestDispatcher("confirmation.jsp").forward(request, response);
 		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
+		//rd.forward(request, response);
 
 	}
 
