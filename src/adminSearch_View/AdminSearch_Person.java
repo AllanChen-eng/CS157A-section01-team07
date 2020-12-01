@@ -3,14 +3,13 @@ package adminSearch_View;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import adminSearch_Model.AdminSearch;
 
 public class AdminSearch_Person {
 	String user = "root";
-	String password = "Winter005#";
+	String password = "password";
 
 //	private Connection conn;
 //	private ResultSet rs;
@@ -108,74 +107,76 @@ public class AdminSearch_Person {
 //		table += "</table>";
 //		return table;
 //	}
-	
+
 	public int adminInsertDepartureTimeAndCity(AdminSearch adminSearch) throws ClassNotFoundException {
-		String INSERT_DEPARTURES_SQL = "INSERT INTO FlightCatch.departs" + "(city, flight_id, time) VALUES " + " (?, ?, ?);";
-		
+		String INSERT_DEPARTURES_SQL = "INSERT INTO FlightCatch.departs" + "(city, flight_id, time) VALUES "
+				+ " (?, ?, ?);";
+
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", 
-				user, password);
-			PreparedStatement ps = connection.prepareStatement(INSERT_DEPARTURES_SQL)){
-				ps.setString(1, adminSearch.getCityD());
-				ps.setInt(2, adminSearch.getFlight_id());
-				ps.setString(3, adminSearch.getDepartureTime());
-					
-				System.out.println(ps);
-					
-				res = ps.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-			return res;
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false",
+				user, password); PreparedStatement ps = connection.prepareStatement(INSERT_DEPARTURES_SQL)) {
+			ps.setString(1, adminSearch.getCityD());
+			ps.setInt(2, adminSearch.getFlight_id());
+			ps.setString(3, adminSearch.getDepartureTime());
+
+			System.out.println(ps);
+
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
-	
+
 	public int adminInsertArrivalTimeAndCity(AdminSearch adminSearch) throws ClassNotFoundException {
-		String INSERT_ARRIVALS_SQL = "INSERT INTO FlightCatch.Arrives" + " (city, time, flight_id) VALUES " + " (?, ?, ?);";
-		
+		String INSERT_ARRIVALS_SQL = "INSERT INTO FlightCatch.Arrives" + " (city, time, flight_id) VALUES "
+				+ " (?, ?, ?);";
+
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", 
-				user, password);
-			PreparedStatement ps = connection.prepareStatement(INSERT_ARRIVALS_SQL)){
-				ps.setString(1, adminSearch.getCityA());
-				ps.setString(2, adminSearch.getArrivalTime());
-				ps.setInt(3, adminSearch.getFlight_id());
-					
-				System.out.println(ps);
-					
-				res = ps.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-			return res;
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false",
+				user, password); PreparedStatement ps = connection.prepareStatement(INSERT_ARRIVALS_SQL)) {
+			ps.setString(1, adminSearch.getCityA());
+			ps.setString(2, adminSearch.getArrivalTime());
+			ps.setInt(3, adminSearch.getFlight_id());
+
+			System.out.println(ps);
+
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
-	
+
 	public int adminInsertFlightInformation(AdminSearch adminSearch) throws ClassNotFoundException {
-		String INSERT_FLIGHT_SQL = "INSERT INTO FlightCatch.Flight" + " (flight_id, passenger_capacity, status, airline, first_class, business_class, economy_class) VALUES " + " (?, ?, ?, ?, ?, ?, ?);";
-		
+		String INSERT_FLIGHT_SQL = "INSERT INTO FlightCatch.Flight"
+				+ " (flight_id, passenger_capacity, status, airline, first_class, business_class, economy_class, current_capacity) VALUES "
+				+ " (?, ?, ?, ?, ?, ?, ?, ?);";
+
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", 
-				user, password);
-			PreparedStatement ps = connection.prepareStatement(INSERT_FLIGHT_SQL)){
-				ps.setInt(1, adminSearch.getFlight_id());
-				ps.setInt(2, adminSearch.getPassenger_capacity());
-				ps.setString(3, adminSearch.getStatus());
-				ps.setString(4, adminSearch.getAirline());
-				ps.setInt(5, adminSearch.getFirstClass());
-				ps.setInt(6, adminSearch.getBusinessClass());
-				ps.setInt(7, adminSearch.getEconomyClass());
-					
-				System.out.println(ps);
-					
-				res = ps.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-			return res;
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false",
+				user, password); PreparedStatement ps = connection.prepareStatement(INSERT_FLIGHT_SQL)) {
+			ps.setInt(1, adminSearch.getFlight_id());
+			ps.setInt(2, adminSearch.getPassenger_capacity());
+			ps.setString(3, adminSearch.getStatus());
+			ps.setString(4, adminSearch.getAirline());
+			ps.setInt(5, adminSearch.getFirstClass());
+			ps.setInt(6, adminSearch.getBusinessClass());
+			ps.setInt(7, adminSearch.getEconomyClass());
+			ps.setInt(8, 0);
+
+			System.out.println(ps);
+
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 }

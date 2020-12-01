@@ -10,7 +10,7 @@ import model.reserve;
 
 public class reserveView {
 	String user = "root";
-	String password = "Winter005#"; // put in your password to the MySQL Workbench database
+	String password = "password"; // put in your password to the MySQL Workbench database
 	private ResultSet rs;
 	private ResultSet rs1;
 	private Connection connection;
@@ -70,19 +70,19 @@ public class reserveView {
 		table += "<th>";
 		table += "Departs";
 		table += "</th>";
-		
+
 		table += "<th>";
 		table += "Departure Time";
 		table += "</th>";
-		
+
 		table += "<th>";
 		table += "Arrives";
 		table += "</th>";
-		
+
 		table += "<th>";
 		table += "Arrival Time";
 		table += "</th>";
-		
+
 		table += "<th>";
 		table += "Seat Number";
 		table += "</th>";
@@ -90,7 +90,7 @@ public class reserveView {
 		table += "</tr>";
 
 		try {
-			while(this.rs.next()) {
+			while (this.rs.next()) {
 				reserve reserve1 = new reserve();
 				reserve1.setTicketNumber(this.rs.getInt("ticket_number"));
 				reserve1.setDeparts(this.rs.getString("Departs.city"));
@@ -98,30 +98,28 @@ public class reserveView {
 				reserve1.setDeparture_time(this.rs.getTime("Departs.time").toString());
 				reserve1.setArrival_time(this.rs.getTime("Arrives.time").toString());
 				reserve1.setSeatNumber(this.rs.getInt("seat_number"));
-				
-				
 
 				table += "<tr>";
 				table += "<td>";
 				table += reserve1.getTicketNumber();
 				table += "</td>";
-				
+
 				table += "<td>";
 				table += reserve1.getDeparts();
 				table += "</td>";
-				
+
 				table += "<td>";
 				table += reserve1.getDeparture_time();
 				table += "</td>";
-				
+
 				table += "<td>";
 				table += reserve1.getArrives();
 				table += "</td>";
-				
+
 				table += "<td>";
 				table += reserve1.getArrival_time();
 				table += "</td>";
-				
+
 				table += "<td>";
 				table += reserve1.getSeatNumber();
 				table += "</td>";
