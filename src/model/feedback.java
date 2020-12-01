@@ -4,7 +4,14 @@ public class feedback {
 private int commentID;
 private String comment;
 private double rating;
+public String getAirline() {
+	return airline;
+}
+public void setAirline(String airline) {
+	this.airline = airline;
+}
 private int flightID;
+private String airline;
 public int getCommentID() {
 	return commentID;
 }

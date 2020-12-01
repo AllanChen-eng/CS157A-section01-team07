@@ -86,6 +86,7 @@ public class reserveView {
 				table += "</td>";
 
 				table += "<td>";
+				table += "</td>";
 				// table += "<form action=\"reserve\" method=\"GET\">"
 				// + " <input type=\"hidden\" name=\"flight_id\" value=" + 1 + " />"
 				// + "<button type=\"submit\"> Reserve </button>" + "</form>";

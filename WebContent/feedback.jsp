@@ -152,11 +152,9 @@ body {
 }
 
 
-.search-container #search-button {
-	height: 50px;
-	width: 75px;
-	border-radius: 15px;
-	border: 2px solid #000000;
+#search-button {
+padding: 5px;
+
 }
 
 .logo {
@@ -185,9 +183,30 @@ border-right: 1px #f8f7f3 solid;
 /* background-image:url(images/bubble.png); */
 /* background-color: black; */
 }
+#comment-box{
+
+height: 100px !important;
+width: 400px;
+}
+table{
+empty-cells: hide;
+}
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+}
+.star{
+height:1em;
+width:1em;
+}
 </style>
 </head>
-<% String table = (String) request.getAttribute("table"); %>
+
+<% String tableFeedback = (String) request.getAttribute("tableFeedback"); %>
+
 <body>
 
 	<div class="topnav">
@@ -228,9 +247,40 @@ border-right: 1px #f8f7f3 solid;
 	<div class="logo">
 		<p>Rate your Flight</p>
 	</div>
+	<div> <form action="feedback" method="GET">
+	<div style="align-items: center" class= "row" style="text-align:center">
+	  <div class="col" style="text-align:right">
+    	<input type="text" name="flight_id" placeholder="Flight Number"> 
+    </div>
+	<div class="col" style="text-align:right">
+	 <select id="rating" name="rating">
+    <option value="1">1</option>
+    <option value="1.5">1.5</option>
+    <option value="2">2</option>
+    <option value="2.5">2.5</option>
+    <option value="3">3</option>
+    <option value="3.5">3.5</option>
+    <option value="4">4</option>
+    <option value="4.5">4.5</option>
+    <option value="5">5</option>
+  </select>
+  </div>
+  	<div style="text-align:left" class="col">
+  <img class= "star" id="image1" src="star.jpg">
+    </div>
+  </div>
+  <div style="text-align:center">
+			<input id="comment-box" type="text" name="commentString" placeholder="Comment"> 
+		</div>
+			<button style="align-items: center" id="search-button" type="submit">
+				<i class="fa fa-heart-o"></i>
+			</button>
+		</form></div>
     <div class="left_contentlist">
           <div class="itemconfiguration" style="padding-left: 30px;">
-                    <%= table %>
+          
+                    <%= tableFeedback %>
+                    
             </div>
             </div>
 
