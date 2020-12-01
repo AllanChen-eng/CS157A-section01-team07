@@ -39,17 +39,18 @@ public class feedback extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 
-		String flightID = request.getParameter("flightID");
+		int flightID = Integer.parseInt(request.getParameter("flight_id"));
 		int rating = Integer.parseInt(request.getParameter("rating"));
-		String comment = request.getParameter("comment");
+		String comment = request.getParameter("commentString");
 
 		feedbackView sq = new feedbackView();
+		sq.insertComment(comment,rating);
 		sq.allComments();
+		sq.doSearch(flightID);
 		String table = sq.getHTMLTable();
 
-		request.setAttribute("table", table);
+		request.setAttribute("tableFeedback", table);
 		String url = "/feedback.jsp";
 
 		RequestDispatcher rd = request.getRequestDispatcher(url);

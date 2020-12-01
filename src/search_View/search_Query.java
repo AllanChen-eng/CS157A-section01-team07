@@ -11,7 +11,7 @@ import search_Model.flight;
 public class search_Query {
 
 	String user = "root";
-	String password = "password";
+	String password = "ALuckyNugget7";
 
 	private Connection conn;
 	private ResultSet rs;
