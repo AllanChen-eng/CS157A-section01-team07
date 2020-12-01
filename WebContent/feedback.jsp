@@ -230,7 +230,7 @@ border-right: 1px #f8f7f3 solid;
 	</div>
     <div class="left_contentlist">
           <div class="itemconfiguration" style="padding-left: 30px;">
-           <%= table %>
+                    <%= table %>
             </div>
             </div>
 
