@@ -76,7 +76,7 @@ img.avatar {
 </head>
 <body>
 	<div class="topnav">
-		<a href="login.jsp">Home</a> <a class="active" href= about.html>About</a> <a
+		<a href="login.jsp">Home</a> <a class="active" href= about.jsp>About</a> <a
 			href="#contact">Contact</a> 
 		<div class="topnav2">
 			<a class="active2" href="adminLogin.jsp"><img src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png"/></a>
@@ -104,7 +104,7 @@ img.avatar {
         <tr>
           <td style="text-align: left;">Nicholas Mendoza</td>
           <td style="text-align: left;"><a href="https://github.com/nikkomdoza">https://github.com/nikkomdoza</a></td>
-          <td class= "last">  <img width="200" height="200" id="image3"src="Nick_Image.jpg"> </td>
+          <td class= "last">  <img width="200" height="250" id="image3"src="Nick_Image.jpg"> </td>
         </tr>
 
       </table>

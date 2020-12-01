@@ -104,7 +104,7 @@ img.avatar {
         <tr>
           <td style="text-align: left;">Nicholas Mendoza</td>
           <td style="text-align: left;">Hobbies: Basketball, Video Games, Food</td>
-          <td class= "last">  <img width="200" height="200" id="image3"src="Nick_Image.jpg"> </td>
+          <td class= "last">  <img width="200" height="250" id="image3"src="Nick_Image.jpg"> </td>
         </tr>
 
       </table>
