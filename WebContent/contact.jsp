@@ -79,7 +79,6 @@ img.avatar {
 		<a href="login.jsp">Home</a> <a class="active" href= about.jsp>About</a> <a
 			href="contact.jsp">Contact</a> 
 		<div class="topnav2">
-			<a class="active2" href="adminLogin.jsp"><img src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png"/></a>
 		</div>
     </div>
 
