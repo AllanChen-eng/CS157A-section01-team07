@@ -9,6 +9,7 @@ public class reserve {
 	private int userID;
 	private int passenger_capacity;
 	private int seat_number;
+	private String username;
 
 	public int getEconomyClass() {
 		return economyClass;
@@ -72,6 +73,14 @@ public class reserve {
 
 	public void setSeatNumber(int seat_number) {
 		this.seat_number = seat_number;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

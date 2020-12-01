@@ -168,7 +168,8 @@ td, th {
     <h1> Confirmation</h1>
  
 <%= table %>
-    
+<%String name = (String) request.getAttribute("username"); %>
+Thank you, <%= name %>
 	
 </body>
 </html>

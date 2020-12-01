@@ -10,7 +10,7 @@ import model.reserve;
 
 public class reserveView {
 	String user = "root";
-	String password = "ALuckyNugget7"; // put in your password to the MySQL Workbench database
+	String password = "password"; // put in your password to the MySQL Workbench database
 	private ResultSet rs;
 	private ResultSet rs1;
 	private Connection connection;
@@ -26,6 +26,7 @@ public class reserveView {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", user,
 					password);
+
 			PreparedStatement ps = connection.prepareStatement(updateSQL);
 			PreparedStatement ps1 = connection.prepareStatement(ticketNumberSQL);
 			PreparedStatement ps2 = connection.prepareStatement(query);
