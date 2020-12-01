@@ -165,6 +165,26 @@ body {
 	font-size: 50px;
 	font-weight: bold;
 }
+.itemconfiguration
+{
+		height:100%;
+		width:100%;
+		/* background-color:#CCC; */		
+        overflow-y:scroll;
+		float:left;
+		position:relative;
+		margin-left:-5px;
+}
+.left_contentlist{
+width:100%;
+float:left;
+padding:0 0 0 5px;
+position:relative;
+float:left;
+border-right: 1px #f8f7f3 solid;
+/* background-image:url(images/bubble.png); */
+/* background-color: black; */
+}
 </style>
 </head>
 <body>
@@ -181,20 +201,20 @@ body {
 	<div id="homeDropdown" class=dropdown-content>
 		<a class="active2" href="login.jsp">Logout</a>
 	</div>
-	<div id="homeDropdown1" class=dropdown-content>
-		<a class="active2" href="feedback.jsp">Rate your Flight</a>
-	</div>
+	<div id="homeDropdown" class=dropdown-content>
+		<a class="active2" href="Feedback.jsp">Logout</a>
+    </div>
+    
 	<script>
 		function homepageDropdown() {
 			document.getElementById("homeDropdown").classList.toggle("show");
-			document.getElementById("homeDropdown1").classList.toggle("show");
 		}
 
 		window.onclick = function(event) {
 			if (!event.target.matches('.dropdownbtn')) {
 				var loginDropdownContent = document.getElementsByClassName("dropdown-content");
 				var i;
-				for (i = 0; i < 3; i++) {
+				for (i = 0; i < 1; i++) {
 					var showDropdown = loginDropdownContent[i];
 					if (showDropdown.classList.contains('show')) {
 						showDropdown.classList.remove('show');
@@ -205,19 +225,13 @@ body {
 	</script>
 
 	<div class="logo">
-		<p>FlightCatch Homepage</p>
+		<p>Rate your Flight</p>
 	</div>
-
-	<div class="search-container">
-
-		<form action="search" method="GET">
-			<input id="Depart-bar" type="text" name="departVal" placeholder="Depart"> <input
-				id="Arrive-bar" type="text" name="arriveVal" placeholder="Arrive">
-			<button id="search-button" type="submit">
-				<i class="fa fa-search"></i>
-			</button>
-		</form>
-	</div>
+    <div class="left_contentlist">
+          <div class="itemconfiguration" style="padding-left: 30px;">
+            insert data here
+            </div>
+            </div>
 
 </body>
 </html>
