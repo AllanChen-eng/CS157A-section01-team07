@@ -11,7 +11,7 @@ import search_Model.flight;
 public class search_Query {
 
 	String user = "root";
-	String password = "Winter005#";
+	String password = "password";
 
 	private Connection conn;
 	private ResultSet rs;
@@ -99,14 +99,10 @@ public class search_Query {
 
 				table += "<td>";
 				table += "<form action=\"reserve\" method=\"GET\">"
-						+ " <input type=\"hidden\" name=\"flight_id\" value="
-						+ 1
-						+ " />"
-						+"<button type=\"submit\"> Reserve </button>"
-						+ "</form>";
-						//"<a href=Reserve? flight_id=" + flight.getFlight_id() + "> Reserve </a>";
-						//"<action="search" method="GET"">	</form>";
-				
+						+ " <input type=\"hidden\" name=\"flight_id\" value=" + flight.getFlight_id() + " />"
+						+ "<button type=\"submit\"> Reserve </button>" + "</form>";
+				// "<a href=Reserve? flight_id=" + flight.getFlight_id() + "> Reserve </a>";
+				// "<action="search" method="GET""> </form>";
 
 				table += "</td>";
 

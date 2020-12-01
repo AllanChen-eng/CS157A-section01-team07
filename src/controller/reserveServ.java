@@ -17,45 +17,46 @@ import view.reserveView;
 @WebServlet("/reserve")
 public class reserveServ extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public reserveServ() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doPost(request,response);
+	public reserveServ() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doPost(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
 
-				int flightID = Integer.parseInt(request.getParameter("flight_id"));
-				reserveView sq = new reserveView();
-				try {
-					sq.reserveTicket(flightID);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				//String table = sq.getHTMLTable();
+		int flightID = Integer.parseInt(request.getParameter("flight_id"));
+		reserveView sq = new reserveView();
+		sq.reserveTicket(flightID);
+		String table = sq.getHTMLTable();
+		// String table = sq.getHTMLTable();
 
-				//request.setAttribute("table", table);
-				String url = "/confirmation.jsp";
+		// request.setAttribute("table", table);
+		request.setAttribute("table", table);
+		String url = "/confirmation.jsp";
 
-				RequestDispatcher rd = request.getRequestDispatcher(url);
-				rd.forward(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
 
 	}
 
