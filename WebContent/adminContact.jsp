@@ -83,7 +83,7 @@ img.avatar {
 		</div>
     </div>
 
-	<h1> About </h1>
+	<h1> Contact </h1>
     
     <table cellspacing="0" id="table1" style="width:100%">
         <tr>
@@ -93,21 +93,20 @@ img.avatar {
         </tr>
         <tr>
             <td style= "text-align: left">Allan Chen</td>
-            <td style="text-align: left">Hobbies: Coding, Gaming</td>
+            <td style="text-align: left">  <a href="https://github.com/BorderDragon"></a> </td>
             <td> <img width="200" height="200" id="image1" src="AllanHikingv2.jpeg"> </td>
         </tr>
         <tr>
           <td style= "text-align: left">Jasmit Mahajan</td>
-          <td style="text-align: left">Hobbies: Basketball, Bollywood and Bhangra Dance, Anime, Golf, Coding, and Football</td> 
+          <td style="text-align: left"><a href="https://github.com/JasmitMahajan"></a></td> 
           <td  width= 20% >  <img width="200" height="200" id="image2" src="Jasmit_Image.jpg"> </td>
         </tr>
         <tr>
           <td style="text-align: left;">Nicholas Mendoza</td>
-          <td style="text-align: left;">Hobbies: Basketball, Video Games, Food</td>
+          <td style="text-align: left;"><a href="https://github.com/nikkomdoza"></a></td>
           <td class= "last">  <img width="200" height="200" id="image3"src="Nick_Image.jpg"> </td>
         </tr>
 
       </table>
 	
 </body>
-</html>

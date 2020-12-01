@@ -169,7 +169,7 @@ body {
 
 	<div class="topnav">
 		<a class="active" href="adminHomepage.jsp">Home</a> <a href="adminAbout.jsp">About</a>
-		<a href="#contact">Contact</a> <a href="adminSearch.jsp">Search</a>
+		<a href="adminContact">Contact</a> <a href="adminSearch.jsp">Search</a>
 		<div class="topnav2">
 			<button onclick="adminHomepageDropdown()" class="dropdownbtn">
 				<img

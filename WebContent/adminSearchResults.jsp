@@ -142,7 +142,7 @@ td, th {
 <body>
 <div class="topnav">
 		<a class="active" href="adminHomepage.jsp">Home</a> <a href="adminAbout.jsp">About</a>
-		<a href="#contact">Contact</a> <a href="adminSearch">Search</a>
+		<a href="adminContact.jsp">Contact</a> <a href="adminSearch">Search</a>
 		<div class="topnav2">
 			<button onclick="adminHomepageDropdown()" class="dropdownbtn"><img
 				src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png" /></button>

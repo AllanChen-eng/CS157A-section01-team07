@@ -76,36 +76,38 @@ img.avatar {
 </head>
 <body>
 	<div class="topnav">
-		<a href="login.jsp">Home</a> <a class="active" href= about.html>About</a> <a
-			href="#contact">Contact</a> 
+		<a href="login.jsp">Home</a> <a class="active" href= admin.jsp>About</a> <a
+			href="contact.jsp">Contact</a> 
 		<div class="topnav2">
 			<a class="active2" href="adminLogin.jsp"><img src="https://img.icons8.com/wired/16/000000/add-user-group-man-woman.png"/></a>
 		</div>
     </div>
 
+	<h1> About </h1>
     
     <table cellspacing="0" id="table1" style="width:100%">
         <tr>
-          <h1> About </h1>
-        </tr>
-        <tr >
-            <td style= "text-align: left;">Name</td>
-            <td style="text-align: left;">about</td>
-            <td>  <img width="200" height="200" id="image1" src="AllanHikingv2.jpeg"> </td>
+            <th style= "text-align: left">Name</th>
+            <th style="text-align: left">About</th>
+            <th style="text-align: left">Image</th>
         </tr>
         <tr>
-          <td style="text-align: left;">Name</td>
-          <td style="text-align: left;">about</td>
-          <td  width= 20% >  <img width="200" height="200" id="image2" src="plane.jpg"> </td>
+            <td style= "text-align: left">Allan Chen</td>
+            <td style="text-align: left">Hobbies: Coding, Gaming</td>
+            <td> <img width="200" height="200" id="image1" src="AllanHikingv2.jpeg"> </td>
         </tr>
         <tr>
-          <td style="text-align: left;">Name</td>
-          <td style="text-align: left;">about</td>
-          <td class= "last">  <img width="200" height="200" id="image3"src="plane.jpg"> </td>
+          <td style= "text-align: left">Jasmit Mahajan</td>
+          <td style="text-align: left">Hobbies: Basketball, Bollywood and Bhangra Dance, Anime, Golf, Coding, and Football</td> 
+          <td  width= 20% >  <img width="200" height="200" id="image2" src="Jasmit_Image.jpg"> </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Nicholas Mendoza</td>
+          <td style="text-align: left;">Hobbies: Basketball, Video Games, Food</td>
+          <td class= "last">  <img width="200" height="200" id="image3"src="Nick_Image.jpg"> </td>
         </tr>
 
       </table>
-
 	
 </body>
 </html>
