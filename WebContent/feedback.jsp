@@ -154,6 +154,7 @@ body {
 
 #search-button {
 padding: 5px;
+text-align:center
 
 }
 
@@ -269,7 +270,7 @@ width:1em;
   <img class= "star" id="image1" src="star.jpg">
     </div>
   </div>
-  <div style="text-align:center">
+  <div id=search-button>
 			<input id="comment-box" type="text" name="commentString" placeholder="Comment"> 
 		</div>
 			<button style="align-items: center" id="search-button" type="submit">

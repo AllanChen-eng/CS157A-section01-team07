@@ -154,7 +154,7 @@ public class AdminSearch_Person {
 	}
 	
 	public int adminInsertFlightInformation(AdminSearch adminSearch) throws ClassNotFoundException {
-		String INSERT_FLIGHT_SQL = "INSERT INTO FlightCatch.Flight" + " (flight_id, passenger_capacity, status, airline) VALUES " + " (?, ?, ?, ?);";
+		String INSERT_FLIGHT_SQL = "INSERT INTO FlightCatch.Flight" + " (flight_id, passenger_capacity, status, airline, first_class, business_class, economy_class) VALUES " + " (?, ?, ?, ?, ?, ?, ?);";
 		
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
@@ -165,6 +165,9 @@ public class AdminSearch_Person {
 				ps.setInt(2, adminSearch.getPassenger_capacity());
 				ps.setString(3, adminSearch.getStatus());
 				ps.setString(4, adminSearch.getAirline());
+				ps.setInt(5, adminSearch.getFirstClass());
+				ps.setInt(6, adminSearch.getBusinessClass());
+				ps.setInt(7, adminSearch.getEconomyClass());
 					
 				System.out.println(ps);
 					
