@@ -19,6 +19,12 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.container {
+	text-align:center;
+	width: 300px;  
+	height: 200px;  
+}
+
 .topnav {
 	overflow: hidden;
 	background-color: #e9e9e9;
@@ -158,6 +164,10 @@ text-align:center
 
 }
 
+#submitBtn {
+	text=align:center;
+}
+
 .logo {
 	text-align: center;
 	padding-top: 100px;
@@ -273,9 +283,11 @@ width:1em;
   <div id=search-button>
 			<input id="comment-box" type="text" name="commentString" placeholder="Comment"> 
 		</div>
+		<div class=container>
 			<button style="align-items: center" id="search-button" type="submit">
 				<i class="fa fa-heart-o"></i>
 			</button>
+		</div>
 		</form></div>
     <div class="left_contentlist">
           <div class="itemconfiguration" style="padding-left: 30px;">

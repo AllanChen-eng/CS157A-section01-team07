@@ -93,17 +93,17 @@ img.avatar {
         </tr>
         <tr>
             <td style= "text-align: left">Allan Chen</td>
-            <td style="text-align: left">  <a href="https://github.com/BorderDragon"></a> </td>
+            <td style="text-align: left">  <a href="https://github.com/BorderDragon">https://github.com/BorderDragon</a> </td>
             <td> <img width="200" height="200" id="image1" src="AllanHikingv2.jpeg"> </td>
         </tr>
         <tr>
           <td style= "text-align: left">Jasmit Mahajan</td>
-          <td style="text-align: left"><a href="https://github.com/JasmitMahajan"></a></td> 
+          <td style="text-align: left"><a href="https://github.com/JasmitMahajan">https://github.com/JasmitMahajan</a></td> 
           <td  width= 20% >  <img width="200" height="200" id="image2" src="Jasmit_Image.jpg"> </td>
         </tr>
         <tr>
           <td style="text-align: left;">Nicholas Mendoza</td>
-          <td style="text-align: left;"><a href="https://github.com/nikkomdoza"></a></td>
+          <td style="text-align: left;"><a href="https://github.com/nikkomdoza">https://github.com/nikkomdoza</a></td>
           <td class= "last">  <img width="200" height="200" id="image3"src="Nick_Image.jpg"> </td>
         </tr>
 
