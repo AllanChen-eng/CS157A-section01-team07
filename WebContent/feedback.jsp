@@ -187,6 +187,7 @@ border-right: 1px #f8f7f3 solid;
 }
 </style>
 </head>
+<% String table = (String) request.getAttribute("table"); %>
 <body>
 
 	<div class="topnav">
@@ -229,7 +230,7 @@ border-right: 1px #f8f7f3 solid;
 	</div>
     <div class="left_contentlist">
           <div class="itemconfiguration" style="padding-left: 30px;">
-            insert data here
+                    <%= table %>
             </div>
             </div>
 
