@@ -88,7 +88,24 @@ CREATE TABLE `Arrives` (
 
 LOCK TABLES `Arrives` WRITE;
 /*!40000 ALTER TABLE `Arrives` DISABLE KEYS */;
-INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00',1),('Cairo','17:15:00',2),('Delhi','21:40:00',3),('Istanbul','03:20:00',4),('London','13:45:00',5),('Mexico City','18:50:00',6),('Moscow','18:20:00',7),('Mumbai','09:30:00',8),('Osaka','07:50:00',9),('Paris','08:30:00',10),('San Francisco','11:45:00',11),('Sao Paulo','15:20:00',12),('Seoul','10:30:00',13),('Shanghai','22:30:00',14),('Tokyo','01:30:00',15),('Test1','12:00:00',16);
+INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00',1),
+			     ('Cairo','17:15:00',2),
+                             ('Delhi','21:40:00',3),
+                             ('Istanbul','03:20:00',4),
+                             ('London','13:45:00',5),
+                             ('Mexico City','18:50:00',6),
+                             ('Moscow','18:20:00',7),
+                             ('Mumbai','09:30:00',8),
+                             ('Osaka','07:50:00',9),
+                             ('Paris','08:30:00',10),
+                             ('San Francisco','11:45:00',11),
+                             ('Sao Paulo','15:20:00',12),
+                             ('Seoul','10:30:00',13),
+                             ('Shanghai','22:30:00',14),
+                             ('Tokyo','01:30:00',15),
+                             ('Test1','12:00:00',16),
+                             ('Test2','12:00:00',17),
+                             ('Test3','12:00:00',18);
 /*!40000 ALTER TABLE `Arrives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +216,24 @@ CREATE TABLE `Departs` (
 
 LOCK TABLES `Departs` WRITE;
 /*!40000 ALTER TABLE `Departs` DISABLE KEYS */;
-INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),('Beijing',2,'22:20:00'),('Berlin',3,'16:50:00'),('Delhi',4,'18:20:00'),('Jerusalem',5,'12:10:00'),('London',6,'01:20:00'),('Los Angeles',7,'03:20:00'),('Madrid',8,'22:45:00'),('New York',9,'05:20:00'),('Osaka',10,'13:00:00'),('Pretoria',11,'14:20:00'),('Rio De Janeiro',12,'16:20:00'),('Rome',13,'17:15:00'),('San Francisco',14,'08:50:00'),('Sao Paulo',15,'19:30:00'),('test',16,'12:00:00');
+INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),
+			     ('Beijing',2,'22:20:00'),
+                             ('Berlin',3,'16:50:00'),
+                             ('Delhi',4,'18:20:00'),
+                             ('Jerusalem',5,'12:10:00'),
+                             ('London',6,'01:20:00'),
+                             ('Los Angeles',7,'03:20:00'),
+                             ('Madrid',8,'22:45:00'),
+                             ('New York',9,'05:20:00'),
+                             ('Osaka',10,'13:00:00'),
+                             ('Pretoria',11,'14:20:00'),
+                             ('Rio De Janeiro',12,'16:20:00'),
+                             ('Rome',13,'17:15:00'),
+                             ('San Francisco',14,'08:50:00'),
+                             ('Sao Paulo',15,'19:30:00'),
+                             ('test',16,'12:00:00'),
+                             ('test',17,'12:00:00'),
+                             ('test',18,'12:00:00');
 /*!40000 ALTER TABLE `Departs` ENABLE KEYS */;
 UNLOCK TABLES;
 
