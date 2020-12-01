@@ -10,7 +10,7 @@ import model.reserve;
 
 public class reserveView {
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "ALuckyNugget7"; // put in your password to the MySQL Workbench database
 	private ResultSet rs;
 	private ResultSet rs1;
 	private Connection connection;
@@ -20,17 +20,16 @@ public class reserveView {
 		String updateSQL = "UPDATE flight set current_capacity=current_capacity+1 WHERE flight_id=?;";
 		String currentCap = "SELECT current_capacity FROM flight where flight_id = ?";
 		String ticketNumberSQL = "INSERT INTO Sells(ticket_number, flight_id) VALUES ((SELECT ticket_number FROM tickets WHERE ticket_number = ?), ?)";
-		String query = "SELECT * FROM tickets WHERE ticket_number = (SELECT current_capacity FROM flight WHERE flight_id"
-				+ "= ?)";
+		String query = "SELECT * FROM FlightCatch.Tickets WHERE ticket_number IN (SELECT current_capacity FROM FlightCatch.Flight WHERE flight_id= ?);";
 		try {
 			int cap = 0;
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FlightCatch?useSSL=false", user,
 					password);
 			PreparedStatement ps = connection.prepareStatement(updateSQL);
-			PreparedStatement ps3 = connection.prepareStatement(currentCap);
 			PreparedStatement ps1 = connection.prepareStatement(ticketNumberSQL);
 			PreparedStatement ps2 = connection.prepareStatement(query);
+			PreparedStatement ps3 = connection.prepareStatement(currentCap);
 			ps.setInt(1, flightID);
 
 			ps2.setInt(1, flightID);

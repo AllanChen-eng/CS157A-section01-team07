@@ -101,9 +101,10 @@ DROP TABLE IF EXISTS `Bought`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Bought` (
   `user_id` int NOT NULL,
-  `price` int DEFAULT NULL,
   `ticket_number` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
+  `flight_id` int DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  KEY `flight_id_idx` (`flight_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -113,7 +114,7 @@ CREATE TABLE `Bought` (
 
 LOCK TABLES `Bought` WRITE;
 /*!40000 ALTER TABLE `Bought` DISABLE KEYS */;
-INSERT INTO `Bought` VALUES (1,500,'13'),(2,500,'10'),(3,1250,'11'),(4,300,'9'),(5,1250,'6'),(6,700,'8'),(7,3000,'7'),(8,2000,'4'),(9,1250,'2'),(10,900,'1'),(11,1000,'3'),(12,250,'5'),(13,800,'14'),(14,700,'15'),(15,750,'12');
+INSERT INTO `Bought` VALUES (1,'13',NULL),(2,'10',NULL),(3,'11',NULL),(4,'9',NULL),(5,'6',NULL),(6,'8',NULL),(7,'7',NULL),(8,'4',NULL),(9,'2',NULL),(10,'1',NULL),(11,'3',NULL),(12,'5',NULL),(13,'14',NULL),(14,'15',NULL),(15,'12',NULL);
 /*!40000 ALTER TABLE `Bought` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,11 +211,11 @@ DROP TABLE IF EXISTS `Feedback`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Feedback` (
-  `comment_id` int NOT NULL,
-  `comment` text,
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `comment` mediumtext,
   `rating` decimal(2,1) DEFAULT NULL,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,7 +224,7 @@ CREATE TABLE `Feedback` (
 
 LOCK TABLES `Feedback` WRITE;
 /*!40000 ALTER TABLE `Feedback` DISABLE KEYS */;
-INSERT INTO `Feedback` VALUES (1,'Great service',5.0),(2,'Airline lost my luggage!',1.0),(3,'average',3.0),(4,'below average',2.5),(5,'the worse',1.0),(6,'great',5.0),(7,'average',3.5),(8,'good',4.0),(9,'Excellent service',5.0),(10,'comfy chairs',4.5),(11,'Plenty of legroom',5.0),(12,'cramped plane',2.0),(13,'bad food',1.0),(14,'seat was terrible',1.0),(15,'great view and excellent flight',5.0);
+INSERT INTO `Feedback` VALUES (1,'test',3.6),(2,'test',2.0);
 /*!40000 ALTER TABLE `Feedback` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +251,7 @@ CREATE TABLE `Flight` (
 
 LOCK TABLES `Flight` WRITE;
 /*!40000 ALTER TABLE `Flight` DISABLE KEYS */;
-INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',1),(2,500,'DELAYED','QATAR AIRLINES',0),(3,550,'ON TIME','UNITED AIRLINES',0),(4,750,'DEPARTING','UNITED AIRLINES',0),(5,1225,'ON TIME','ALLEGIANT AIR',0),(6,1400,'BOARDING','ALASKA AIRLINES',0),(7,1225,'ON TIME','GERMAN AIRLINE',0),(8,800,'LANDING','UNITED AIRLINES',0),(9,550,'BOARDING','SOUTWEST AIRLINES',0),(10,560,'DEPARTING','JETBLUE',0),(11,570,'ARRIVED','SPIRIT AIRLINES',0),(12,800,'DIVERTED','JETBLUE',0),(13,300,'ON TIME','JETBLUE',0),(14,860,'DELAYED','CATHAY PACIFIC',0),(15,930,'ON TIME','JETBLUE',NULL),(16,0,NULL,NULL,NULL),(17,0,'CANCELLED','JetBlue',NULL),(18,0,NULL,NULL,NULL);
+INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',4),(2,500,'DELAYED','QATAR AIRLINES',0),(3,550,'ON TIME','UNITED AIRLINES',0),(4,750,'DEPARTING','UNITED AIRLINES',0),(5,1225,'ON TIME','ALLEGIANT AIR',0),(6,1400,'BOARDING','ALASKA AIRLINES',0),(7,1225,'ON TIME','GERMAN AIRLINE',0),(8,800,'LANDING','UNITED AIRLINES',0),(9,550,'BOARDING','SOUTWEST AIRLINES',0),(10,560,'DEPARTING','JETBLUE',0),(11,570,'ARRIVED','SPIRIT AIRLINES',0),(12,800,'DIVERTED','JETBLUE',0),(13,300,'ON TIME','JETBLUE',0),(14,860,'DELAYED','CATHAY PACIFIC',0),(15,930,'ON TIME','JETBLUE',0),(16,0,NULL,NULL,0),(17,0,'CANCELLED','JetBlue',0),(18,0,NULL,NULL,0);
 /*!40000 ALTER TABLE `Flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -397,6 +398,7 @@ CREATE TABLE `Sells` (
 
 LOCK TABLES `Sells` WRITE;
 /*!40000 ALTER TABLE `Sells` DISABLE KEYS */;
+INSERT INTO `Sells` VALUES (2,1),(3,1),(4,1);
 /*!40000 ALTER TABLE `Sells` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -409,9 +411,9 @@ DROP TABLE IF EXISTS `Tickets`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Tickets` (
   `ticket_number` int NOT NULL AUTO_INCREMENT,
-  `fligh_time` time DEFAULT NULL,
+  `seat_number` int DEFAULT NULL,
   PRIMARY KEY (`ticket_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -420,7 +422,7 @@ CREATE TABLE `Tickets` (
 
 LOCK TABLES `Tickets` WRITE;
 /*!40000 ALTER TABLE `Tickets` DISABLE KEYS */;
-INSERT INTO `Tickets` VALUES (1,'00:00:15'),(2,'00:00:14'),(3,'00:00:13'),(4,'00:00:12'),(5,'00:00:11'),(6,'00:00:10'),(7,'00:00:09'),(8,'00:00:08'),(9,'00:00:07'),(10,'00:00:06'),(11,'00:00:05'),(12,'00:00:04'),(13,'00:00:03'),(14,'00:00:02'),(15,'00:00:01');
+INSERT INTO `Tickets` VALUES (0,0),(1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12),(13,13),(14,14),(15,15);
 /*!40000 ALTER TABLE `Tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -458,4 +460,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-30  0:06:35
+-- Dump completed on 2020-11-30 22:31:40
