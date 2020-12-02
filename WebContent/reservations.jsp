@@ -176,9 +176,22 @@ body {
 	font-size: 50px;
 	font-weight: bold;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
 </style>
 </head>
-
+<% String table = (String) request.getAttribute("table"); %>
 <body>
 
 	<div class="topnav">
@@ -199,6 +212,7 @@ body {
 	<div id="homeDropdown1" class=dropdown-content>
 		<a class="active2" href="feedback.jsp">Rate your Flight</a>
 	</div>
+	
 	<script>
 		function homepageDropdown() {
 			document.getElementById("homeDropdown").classList.toggle("show");
@@ -218,21 +232,6 @@ body {
 			}
 		}
 	</script>
-
-	<div class="logo">
-		<p>FlightCatch Homepage</p>
-	</div>
-
-	<div class="search-container">
-
-		<form action="search" method="GET">
-			<input id="Depart-bar" type="text" name="departVal" placeholder="Depart"> 
-			<input id="Arrive-bar" type="text" name="arriveVal" placeholder="Arrive">
-			<button id="search-button" type="submit">
-				<i class="fa fa-search"></i>
-			</button>
-		</form>
-	</div>
-
+	
+<%= table %>
 </body>
-</html>
