@@ -62,12 +62,7 @@ public class delete_Servlet extends HttpServlet {
 			ps.setString(1, username);
 			ps.setInt(2, flightID);
 			ps.setInt(3, ticketNumber);
-			String query2 = "DELETE FROM sells WHERE ticket_number = ? AND flight_id = ? LIMIT 1";
-			PreparedStatement ps1 = conn.prepareStatement(query2);
-			ps1.setInt(1, ticketNumber);
-			ps1.setInt(2, flightID);
 			ps.executeUpdate();
-			ps1.executeUpdate();
 			rv.getReservations(username);
 			table = rv.getHTMLTable();
 
