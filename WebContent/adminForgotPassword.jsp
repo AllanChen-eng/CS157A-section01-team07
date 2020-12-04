@@ -96,6 +96,22 @@ body {
 	border: 2px solid #000000;
 }
 
+.container #firstNameBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
+.container #lastNameBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
 .container #usernameBar {
 	display: inline-block;
 	width: 200px;
@@ -175,6 +191,18 @@ button:hover {
 
 	<form action="<%=request.getContextPath()%>/adminForgotPassword" method="post">
 		<div class="container">
+			<label for="firstName"><b>Admin First Name</b></label>
+			<div>
+				<input id="firstNameBar" type="text" placeholder="Enter Admin First Name"
+					name="firstName" required>
+			</div>
+			
+			<label for="lastName"><b>Admin Last Name</b></label>
+			<div>
+				<input id="lastNameBar" type="text" placeholder="Enter Admin Last Name"
+					name="lastName" required>
+			</div>
+			
 			<label for="username"><b>Admin Username</b></label>
 			<div>
 				<input id="usernameBar" type="text" placeholder="Enter Admin Username"

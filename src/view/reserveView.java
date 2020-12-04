@@ -10,7 +10,7 @@ import model.reserve;
 
 public class reserveView {
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "Winter005#"; // put in your password to the MySQL Workbench database
 	private ResultSet rs;
 	private ResultSet rs1;
 	private Connection connection;

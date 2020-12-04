@@ -48,18 +48,20 @@ public class ForgotPasswordServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String username = request.getParameter("username");
+		String emailAddress = request.getParameter("emailAddress");
 		String password = request.getParameter("password");
 		forgotPassword fg = new forgotPassword();
 		fg.setUsername(username);
+		fg.setEmailAddress(emailAddress);
 		fg.setPassword(password);
 
 		try {
-			if (fpp.checkUsername(fg)) {
+			if (fpp.checkUsernameAndEmailAddress(fg)) {
 				fpp.registerNewPassword(fg);
 				RequestDispatcher d = request.getRequestDispatcher("/login.jsp");
 				d.forward(request, response);
 			} else {
-				request.setAttribute("error", "Username is incorrect. Please try again");
+				request.setAttribute("error", "Username or Email Address is incorrect. Please try again");
 				request.getRequestDispatcher("/forgotPassword.jsp").forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {

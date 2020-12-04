@@ -10,7 +10,7 @@ import model.feedback;
 
 public class feedbackView {
 	String user = "root";
-	String password = "password";
+	String password = "Winter005#";
 
 	private Connection conn;
 	private ResultSet rs;

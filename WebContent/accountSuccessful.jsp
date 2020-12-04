@@ -50,7 +50,7 @@ body {
 	</div>
 
 	<div>
-		<h1>Login Successful</h1>
+		<h1>Account Successful</h1>
 	</div>
 </body>
 </html>

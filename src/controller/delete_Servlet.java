@@ -55,7 +55,7 @@ public class delete_Servlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightcatch?useSSL=false",
-					"root", "password");
+					"root", "Winter005#");
 			String query = "DELETE FROM bought WHERE user_id = (SELECT user_id FROM users WHERE username = ?) AND flight_id = ? AND"
 					+ " ticket_number = ? LIMIT 1";
 			PreparedStatement ps = conn.prepareStatement(query);
