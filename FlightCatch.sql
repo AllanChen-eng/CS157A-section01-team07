@@ -88,24 +88,7 @@ CREATE TABLE `Arrives` (
 
 LOCK TABLES `Arrives` WRITE;
 /*!40000 ALTER TABLE `Arrives` DISABLE KEYS */;
-INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00',1),
-			     ('Cairo','17:15:00',2),
-                             ('Delhi','21:40:00',3),
-                             ('Istanbul','03:20:00',4),
-                             ('London','13:45:00',5),
-                             ('Mexico City','18:50:00',6),
-                             ('Moscow','18:20:00',7),
-                             ('Mumbai','09:30:00',8),
-                             ('Osaka','07:50:00',9),
-                             ('Paris','08:30:00',10),
-                             ('San Francisco','11:45:00',11),
-                             ('Sao Paulo','15:20:00',12),
-                             ('Seoul','10:30:00',13),
-                             ('Shanghai','22:30:00',14),
-                             ('Tokyo','01:30:00',15),
-                             ('Test1','12:00:00',16),
-                             ('Test2','12:00:00',17),
-                             ('Test3','12:00:00',18);
+INSERT INTO `Arrives` VALUES ('Buenos Aires','14:30:00',1),('Cairo','17:15:00',2),('Delhi','21:40:00',3),('Istanbul','03:20:00',4),('London','13:45:00',5),('Mexico City','18:50:00',6),('Moscow','18:20:00',7),('Mumbai','09:30:00',8),('Osaka','07:50:00',9),('Paris','08:30:00',10),('San Francisco','11:45:00',11),('Sao Paulo','15:20:00',12),('Seoul','10:30:00',13),('Shanghai','22:30:00',14),('Tokyo','01:30:00',15),('Test1','12:00:00',16);
 /*!40000 ALTER TABLE `Arrives` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,24 +199,7 @@ CREATE TABLE `Departs` (
 
 LOCK TABLES `Departs` WRITE;
 /*!40000 ALTER TABLE `Departs` DISABLE KEYS */;
-INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),
-			     ('Beijing',2,'22:20:00'),
-                             ('Berlin',3,'16:50:00'),
-                             ('Delhi',4,'18:20:00'),
-                             ('Jerusalem',5,'12:10:00'),
-                             ('London',6,'01:20:00'),
-                             ('Los Angeles',7,'03:20:00'),
-                             ('Madrid',8,'22:45:00'),
-                             ('New York',9,'05:20:00'),
-                             ('Osaka',10,'13:00:00'),
-                             ('Pretoria',11,'14:20:00'),
-                             ('Rio De Janeiro',12,'16:20:00'),
-                             ('Rome',13,'17:15:00'),
-                             ('San Francisco',14,'08:50:00'),
-                             ('Sao Paulo',15,'19:30:00'),
-                             ('test',16,'12:00:00'),
-                             ('test',17,'12:00:00'),
-                             ('test',18,'12:00:00');
+INSERT INTO `Departs` VALUES ('Austin',1,'21:30:00'),('Beijing',2,'22:20:00'),('Berlin',3,'16:50:00'),('Delhi',4,'18:20:00'),('Jerusalem',5,'12:10:00'),('London',6,'01:20:00'),('Los Angeles',7,'03:20:00'),('Madrid',8,'22:45:00'),('New York',9,'05:20:00'),('Osaka',10,'13:00:00'),('Pretoria',11,'14:20:00'),('Rio De Janeiro',12,'16:20:00'),('Rome',13,'17:15:00'),('San Francisco',14,'08:50:00'),('Sao Paulo',15,'19:30:00'),('test',16,'12:00:00');
 /*!40000 ALTER TABLE `Departs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,39 +233,25 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `Flight`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Flight` (
   `flight_id` int NOT NULL AUTO_INCREMENT,
   `passenger_capacity` int DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   `airline` varchar(45) DEFAULT NULL,
   `current_capacity` int DEFAULT NULL,
-  `first_class` int DEFAULT NULL,
-  `business_class` int DEFAULT NULL,
-  `economy_class` int DEFAULT NULL,
   PRIMARY KEY (`flight_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 --
 -- Dumping data for table `Flight`
 --
 
 LOCK TABLES `Flight` WRITE;
 /*!40000 ALTER TABLE `Flight` DISABLE KEYS */;
-INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',4, 40, 60, 100),
-							(2,500,'DELAYED','QATAR AIRLINES',0, 100, 150, 250),
-                            (3,550,'ON TIME','UNITED AIRLINES',0, 110, 165, 275),
-                            (4,750,'DEPARTING','UNITED AIRLINES',0, 150, 225, 375),
-                            (5,600,'ON TIME','ALLEGIANT AIR',0, 120, 180, 300),
-                            (6,300,'BOARDING','ALASKA AIRLINES',0, 60, 90, 150),
-                            (7,400,'ON TIME','GERMAN AIRLINE',0, 80, 120, 200),
-                            (8,800,'LANDING','UNITED AIRLINES',0, 160, 240, 400),
-                            (9,550,'BOARDING','SOUTWEST AIRLINES',0, 110, 165, 275),
-                            (10,560,'DEPARTING','JETBLUE',0, 112, 168, 280),
-                            (11,400,'ARRIVED','SPIRIT AIRLINES',0, 80, 120, 200),
-                            (12,800,'DIVERTED','JETBLUE', 0, 160, 240, 400),
-                            (13,300,'ON TIME','JETBLUE',0, 60, 90, 150),
-                            (14,560,'DELAYED','CATHAY PACIFIC', 0, 112, 168, 280),
-                            (15,550,'ON TIME','JETBLUE', 0, 110, 165, 275),
-                            (16,0,NULL,NULL,0, 0, 0, 0);
+INSERT INTO `Flight` VALUES (1,200,'CANCELED','EMIRATES',4),(2,500,'DELAYED','QATAR AIRLINES',0),(3,550,'ON TIME','UNITED AIRLINES',0),(4,750,'DEPARTING','UNITED AIRLINES',0),(5,1225,'ON TIME','ALLEGIANT AIR',0),(6,1400,'BOARDING','ALASKA AIRLINES',0),(7,1225,'ON TIME','GERMAN AIRLINE',0),(8,800,'LANDING','UNITED AIRLINES',0),(9,550,'BOARDING','SOUTWEST AIRLINES',0),(10,560,'DEPARTING','JETBLUE',0),(11,570,'ARRIVED','SPIRIT AIRLINES',0),(12,800,'DIVERTED','JETBLUE',0),(13,300,'ON TIME','JETBLUE',0),(14,860,'DELAYED','CATHAY PACIFIC',0),(15,930,'ON TIME','JETBLUE',0),(16,0,NULL,NULL,0),(17,0,'CANCELLED','JetBlue',0),(18,0,NULL,NULL,0);
 /*!40000 ALTER TABLE `Flight` ENABLE KEYS */;
 UNLOCK TABLES;
 
