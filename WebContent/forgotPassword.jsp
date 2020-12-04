@@ -104,6 +104,14 @@ body {
 	border: 2px solid #000000;
 }
 
+.container #emailAddressBar {
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	border-radius: 15px;
+	border: 2px solid #000000;
+}
+
 .container #passwordBar {
 	display: inline-block;
 	width: 200px;
@@ -179,6 +187,12 @@ button:hover {
 			<div>
 				<input id="usernameBar" type="text" placeholder="Enter Username"
 					name="username" required>
+			</div>
+			
+			<label for="emailAddress"><b>Email Address</b></label>
+			<div>
+				<input id="emailAddressBar" type="text" placeholder="Enter Email Address"
+					name="emailAddress" required>
 			</div>
 
 			<div class="container">

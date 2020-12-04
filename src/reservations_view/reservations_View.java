@@ -10,7 +10,7 @@ import reservations_model.reservations_Model;
 
 public class reservations_View {
 	String user = "root";
-	String password = "password";
+	String password = "Winter005#";
 
 	private Connection conn;
 	private ResultSet rs;

@@ -47,9 +47,13 @@ public class AdminForgotPasswordServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		adminForgotPassword afg = new adminForgotPassword();
+		afg.setFirstName(firstName);
+		afg.setLastName(lastName);
 		afg.setUsername(username);
 		afg.setPassword(password);
 
@@ -59,7 +63,7 @@ public class AdminForgotPasswordServlet extends HttpServlet {
 				RequestDispatcher d = request.getRequestDispatcher("/adminLogin.jsp");
 				d.forward(request, response);
 			} else {
-				request.setAttribute("error", "Username is incorrect. Please try again");
+				request.setAttribute("error", "Admin first, last, or username is incorrect. Please try again");
 				request.getRequestDispatcher("/adminForgotPassword.jsp").forward(request, response);
 			}
 		} catch (ClassNotFoundException e) {

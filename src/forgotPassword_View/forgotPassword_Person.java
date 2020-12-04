@@ -10,11 +10,11 @@ import forgotPassword_Model.forgotPassword;
 
 public class forgotPassword_Person {
 	String user = "root";
-	String password = "password"; // put in your password to the MySQL Workbench database
+	String password = "Winter005#"; // put in your password to the MySQL Workbench database
 
-	public boolean checkUsername(forgotPassword fg) throws ClassNotFoundException {
+	public boolean checkUsernameAndEmailAddress(forgotPassword fg) throws ClassNotFoundException {
 
-		String login_Vals = "SELECT * FROM users WHERE username= ?;";
+		String login_Vals = "SELECT * FROM customers WHERE username= ? AND email_address= ?;";
 
 		boolean res = false;
 		Class.forName("com.mysql.jdbc.Driver");
@@ -23,6 +23,7 @@ public class forgotPassword_Person {
 
 				PreparedStatement ps = connection.prepareStatement(login_Vals)) {
 			ps.setString(1, forgotPassword.getUsername());
+			ps.setString(2, forgotPassword.getEmailAddress());
 
 			System.out.println(ps);
 			ResultSet rs = ps.executeQuery();
