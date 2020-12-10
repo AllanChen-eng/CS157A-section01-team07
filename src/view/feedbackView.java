@@ -15,7 +15,7 @@ public class feedbackView {
 	private Connection conn;
 	private ResultSet rs;
 	private ResultSet rs2;
-
+	private ResultSet rs3;
 	public void doSearch(int flightID) {
 		String query = "SELECT airline FROM FlightCatch.Flight WHERE flight_id=?;";
 
@@ -33,6 +33,36 @@ public class feedbackView {
 			error.printStackTrace();
 		}
 
+	}
+	public int feedbackTable(String username){
+		String fTable="SELECT user_id, flight.flight_id\n" + 
+				"				FROM bought join flight on bought.flight_id = flight.flight_id join departs on flight.flight_id=\n" + 
+				"				departs.flight_id join arrives on departs.flight_id=arrives.flight_id join tickets on bought.ticket_number=tickets.ticket_number\n" + 
+				"				where user_id = (SELECT user_id FROM users WHERE username = ?);";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightcatch?useSSL=false", user, password);
+
+			PreparedStatement ps1 = conn.prepareStatement(fTable);
+			ps1.setString(1, username);
+			System.out.println(ps1);
+			rs3= ps1.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException error) {
+			error.printStackTrace();
+		}
+		System.out.println(username);
+		int feedback2=0;
+		try {
+			while(this.rs3.next()) {
+			feedback2= this.rs3.getInt("flight_id");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return feedback2;
 	}
 
 	public void allComments() {

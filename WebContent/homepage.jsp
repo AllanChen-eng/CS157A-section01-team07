@@ -187,6 +187,9 @@ body {
 		<form class="formclass" action="reservations" method="GET">
 			<button id="reservationsBtn" type="submit">Reservations</button>
 		</form>
+				<form class="formclass" action="feedbackTable" method="GET">
+			<button id="reservationsBtn" type="submit">Feedback</button>
+		</form>
 		<div class="topnav2">
 			<button onclick="homepageDropdown()" class="dropdownbtn"><img
 				src="https://img.icons8.com/dusk/16/000000/add-user-group-man-woman.png" /></button>
