@@ -174,6 +174,12 @@ text-align:center
 	font-size: 50px;
 	font-weight: bold;
 }
+
+.submitButton {
+	text-align: center;
+	padding-top: 50px;
+}
+
 .itemconfiguration
 {
 		height:100%;
@@ -258,44 +264,51 @@ width:1em;
 	<div class="logo">
 		<p>Rate your Flight</p>
 	</div>
-	<div> <form action="feedback" method="GET">
-	<div style="align-items: center" class= "row" style="text-align:center">
-	  <div class="col" style="text-align:right">
-    	<input type="text" name="flight_id" placeholder="Flight Number"> 
-    </div>
-	<div class="col" style="text-align:right">
-	 <select id="rating" name="rating">
-    <option value="1">1</option>
-    <option value="1.5">1.5</option>
-    <option value="2">2</option>
-    <option value="2.5">2.5</option>
-    <option value="3">3</option>
-    <option value="3.5">3.5</option>
-    <option value="4">4</option>
-    <option value="4.5">4.5</option>
-    <option value="5">5</option>
-  </select>
-  </div>
-  	<div style="text-align:left" class="col">
-  <img class= "star" id="image1" src="star.jpg">
-    </div>
-  </div>
-  <div id=search-button>
-			<input id="comment-box" type="text" name="commentString" placeholder="Comment"> 
-		</div>
-		<div class=container>
-			<button style="align-items: center" id="search-button" type="submit">
-				<i class="fa fa-heart-o"></i>
-			</button>
-		</div>
-		</form></div>
+	
+	<div> 
+		<form action="feedback" method="GET">
+			<div class="row">
+	  			<div class="col" style="text-align:right">
+    				<input type="text" name="flight_id" placeholder="Flight Number"> 
+    			</div>
+					<div class="col" style="text-align:right">
+	 					<select id="rating" name="rating">
+    						<option value="1">1</option>
+    						<option value="1.5">1.5</option>
+    						<option value="2">2</option>
+    						<option value="2.5">2.5</option>
+    						<option value="3">3</option>
+    						<option value="3.5">3.5</option>
+    						<option value="4">4</option>
+    						<option value="4.5">4.5</option>
+    						<option value="5">5</option>
+  						</select>
+  					</div>
+  						<div style="text-align:left" class="col">
+  							<img class= "star" id="image1" src="star.jpg">
+    					</div>
+  			</div>
+  			
+  			<div id=search-button>
+				<input id="comment-box" type="text" name="commentString" placeholder="Comment"> 
+			</div>
+			
+			<div class="submitButton">
+				<button id="search-button" type="submit">
+					Enter
+				</button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="submitButton">
+	</div>
+	
     <div class="left_contentlist">
-          <div class="itemconfiguration" style="padding-left: 30px;">
-          
-                    <%= tableFeedback %>
-                    
-            </div>
-            </div>
+    	<div class="itemconfiguration" style="padding-left: 30px;">
+        	<%= tableFeedback %>                
+        </div>
+    </div>
 
 </body>
 </html>
