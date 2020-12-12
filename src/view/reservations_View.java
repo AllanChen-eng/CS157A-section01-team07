@@ -10,7 +10,7 @@ import model.reservations_Model;
 
 public class reservations_View {
 	String user = "root";
-	String password = "ALuckyNugget7";
+	String password = "password";
 
 	private Connection conn;
 	private ResultSet rs;
@@ -100,11 +100,10 @@ public class reservations_View {
 				table += "</td>";
 
 				table += "<td>";
-				table += "<form action=\"delete\" method=\"GET\">"
-						+ " <input type=\"hidden\" name=\"flight_id\" value=" + reservations_Model.getFlightID() + " />"
-						+ " <input type=\"hidden\" name=\"ticket_number\" value=" + reservations_Model.getTicketNumber() + " />"
-						+ "<button type=\"submit\"> Cancel </button>"
-						+ "</form>";
+				table += "<form action=\"delete\" method=\"GET\">" + " <input type=\"hidden\" name=\"flight_id\" value="
+						+ reservations_Model.getFlightID() + " />"
+						+ " <input type=\"hidden\" name=\"ticket_number\" value=" + reservations_Model.getTicketNumber()
+						+ " />" + "<button type=\"submit\"> Cancel </button>" + "</form>";
 
 				table += "</td>";
 

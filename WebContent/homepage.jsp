@@ -293,7 +293,7 @@ body {
 
 </style>
 </head>
-
+<% String newFlight = (String) request.getSession().getAttribute("newFlight"); %>
 <body>
 
 	<div class="topnav">
@@ -365,7 +365,7 @@ body {
 										<span class="sr-only">Close</span>
 									</button>
           	<i class="start-icon  fa fa-info-circle faa-shake animated"></i>
-          	<strong class="font__weight-semibold">Heads up!</strong> This alert needs your attention, but it's not super important.
+          	<strong class="font__weight-semibold">Heads up! A new flight was listed!</strong> <%= newFlight %>
         	</div>
      	</div>
      </div>

@@ -54,13 +54,10 @@ public class AdminSearchServlet extends HttpServlet {
 		int passenger_capacity = Integer.parseInt(request.getParameter("passengerCapacity"));
 		String status = request.getParameter("status");
 		String airline = request.getParameter("airline");
-		int firstClass = Integer.parseInt(request.getParameter("first"));
-		int businessClass = Integer.parseInt(request.getParameter("business"));
-		int economyClass = Integer.parseInt(request.getParameter("economy"));
 
 		AdminSearch_Person asp = new AdminSearch_Person();
 		AdminSearch adminSearch = new AdminSearch();
-		
+
 		adminSearch.setCityD(cityD);
 		adminSearch.setDepartureTime(timeD);
 		adminSearch.setCityA(cityA);
@@ -68,13 +65,9 @@ public class AdminSearchServlet extends HttpServlet {
 		adminSearch.setAirline(airline);
 		adminSearch.setPassenger_capacity(passenger_capacity);
 		adminSearch.setStatus(status);
-		adminSearch.setFirstClass(firstClass);
-		adminSearch.setBusinessClass(businessClass);
-		adminSearch.setEconomyClass(economyClass);
-		
-		
+
 //		asp.doAdminSearch(departs, arrives);
-		
+
 		try {
 			asp.adminInsertDepartureTimeAndCity(adminSearch);
 		} catch (ClassNotFoundException e1) {
@@ -93,9 +86,9 @@ public class AdminSearchServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		RequestDispatcher rd2 = request.getRequestDispatcher("/adminHomepage.jsp");
-		
+
 //		String table = asp.getAdminHTMLTable();
 //
 //		request.setAttribute("adminTable", table);
@@ -103,6 +96,9 @@ public class AdminSearchServlet extends HttpServlet {
 //
 //		RequestDispatcher rd = request.getRequestDispatcher(url);
 //		rd.forward(request, response);
+		String newFlight = cityD + " to " + cityA;
+		request.getSession().setAttribute("newFlight", newFlight);
+
 		rd2.forward(request, response);
 
 	}

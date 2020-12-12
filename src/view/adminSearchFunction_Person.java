@@ -10,7 +10,7 @@ import model.AdminSearch;
 
 public class adminSearchFunction_Person {
 	String user = "root";
-	String password = "ALuckyNugget7";
+	String password = "password";
 
 	private Connection conn;
 	private ResultSet rs;
