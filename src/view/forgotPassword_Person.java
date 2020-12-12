@@ -37,7 +37,7 @@ public class forgotPassword_Person {
 	}
 
 	public int registerNewPassword(forgotPassword fg) throws ClassNotFoundException {
-		String INSERT_USERS_SQL = "INSERT INTO users" + " (username, password) VALUES " + " (?, ?);";
+		String INSERT_USERS_SQL = "UPDATE users SET password = ? WHERE username = ?";
 
 		int res = 0;
 		Class.forName("com.mysql.jdbc.Driver");
@@ -46,8 +46,8 @@ public class forgotPassword_Person {
 
 				PreparedStatement ps1 = connection.prepareStatement(INSERT_USERS_SQL)) {
 
-			ps1.setString(1, forgotPassword.getUsername());
-			ps1.setString(2, forgotPassword.getPassword());
+			ps1.setString(1, forgotPassword.getPassword());
+			ps1.setString(2, forgotPassword.getUsername());
 
 			System.out.println(ps1);
 			res = ps1.executeUpdate();
