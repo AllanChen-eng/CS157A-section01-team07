@@ -178,8 +178,8 @@ body {
 }
 
 .alertBox {
-	padding: 300px;
-	float: right;
+	padding: 150px;
+	text-align: center;
 }
 
 .alert>.start-icon {
