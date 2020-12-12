@@ -51,17 +51,6 @@ body {
 	border: none;
 }
 
-.topnav #reservationsBtn {
-	float: left;
-	display: block;
-	color: black;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
-	border: none;
-}
-
 .topnav2 {
 	overflow: hidden;
 	background-color: #e9e9e9;
@@ -93,7 +82,6 @@ body {
 	font-size: 17px;
 	border: none;
 }
-
 
 .dropdownbtn {
 	float: right;
@@ -162,7 +150,6 @@ body {
 	border: 2px solid #000000;
 }
 
-
 .search-container #search-button {
 	height: 50px;
 	width: 75px;
@@ -176,46 +163,59 @@ body {
 	font-size: 50px;
 	font-weight: bold;
 }
+
+.itemconfiguration {
+	height: 100%;
+	width: 100%;
+	/* background-color:#CCC; */
+	overflow-y: scroll;
+	float: left;
+	position: relative;
+	margin-left: -5px;
+}
+
+.left_contentlist {
+	width: 100%;
+	float: left;
+	padding: 0 0 0 5px;
+	position: relative;
+	float: left;
+	border-right: 1px #f8f7f3 solid;
+	/* background-image:url(images/bubble.png); */
+	/* background-color: black; */
+}
 </style>
 </head>
-
 <body>
-
+	<% String tableAction = (String) request.getAttribute("tableAction"); %>
 	<div class="topnav">
 		<a class="active" href="homepage.jsp">Home</a> <a href="about.jsp">About</a>
-		<a href="contact.jsp">Contact</a> 
-		<form class="formclass" action="reservations" method="GET">
-			<button id="reservationsBtn" type="submit">Reservations</button>
-		</form>
-				<form class="formclass" action="feedbackTable" method="GET">
-			<button id="reservationsBtn" type="submit">Feedback</button>
-		</form>
-				<form class="formclass" action="settingsAction" method="GET">
-			<a href="settings.jsp"> Settings</a>
-		</form>
+		<a href="#contact">Contact</a>
 		<div class="topnav2">
-			<button onclick="homepageDropdown()" class="dropdownbtn"><img
-				src="https://img.icons8.com/dusk/16/000000/add-user-group-man-woman.png" /></button>
+			<button onclick="homepageDropdown()" class="dropdownbtn">
+				<img
+					src="https://img.icons8.com/dusk/16/000000/add-user-group-man-woman.png" />
+			</button>
 		</div>
 	</div>
-	
+
 	<div id="homeDropdown" class=dropdown-content>
 		<a class="active2" href="login.jsp">Logout</a>
 	</div>
-	<div id="homeDropdown1" class=dropdown-content>
-		<a class="active2" href="feedback.jsp">Rate your Flight</a>
+	<div id="homeDropdown" class=dropdown-content>
+		<a class="active2" href="Feedback.jsp">Feedback</a>
 	</div>
+
 	<script>
 		function homepageDropdown() {
 			document.getElementById("homeDropdown").classList.toggle("show");
-			document.getElementById("homeDropdown1").classList.toggle("show");
 		}
 
 		window.onclick = function(event) {
 			if (!event.target.matches('.dropdownbtn')) {
 				var loginDropdownContent = document.getElementsByClassName("dropdown-content");
 				var i;
-				for (i = 0; i < 4; i++) {
+				for (i = 0; i < 1; i++) {
 					var showDropdown = loginDropdownContent[i];
 					if (showDropdown.classList.contains('show')) {
 						showDropdown.classList.remove('show');
@@ -226,18 +226,22 @@ body {
 	</script>
 
 	<div class="logo">
-		<p>FlightCatch Homepage</p>
+		<p>Settings</p>
 	</div>
+	<div class="left_contentlist">
+		<div class="itemconfiguration" style="padding-left: 300px;">
+			<div class="col" style="text-align: left">
+				<select id="timezoneString" name="timezoneString">
+					<option value="PST">PST</option>
+					<option value="EST">EST</option>
 
-	<div class="search-container">
+				</select> Time zone
+			</div>
 
-		<form action="search" method="GET">
-			<input id="Depart-bar" type="text" name="departVal" placeholder="Depart"> 
-			<input id="Arrive-bar" type="text" name="arriveVal" placeholder="Arrive">
-			<button id="search-button" type="submit">
-				<i class="fa fa-search"></i>
-			</button>
-		</form>
+			<div class="submitButton">
+				<button id="search-button" type="submit">Enter</button>
+			</div>
+		</div>
 	</div>
 
 </body>
