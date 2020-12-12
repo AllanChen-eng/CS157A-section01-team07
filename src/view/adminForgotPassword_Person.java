@@ -10,7 +10,7 @@ import model.adminForgotPassword;
 
 public class adminForgotPassword_Person {
 	String user = "root";
-	String password = "ALuckyNugget7"; // put in your password to the MySQL Workbench database
+	String password = "password"; // put in your password to the MySQL Workbench database
 
 	public boolean checkAdminUsername(adminForgotPassword afg) throws ClassNotFoundException {
 

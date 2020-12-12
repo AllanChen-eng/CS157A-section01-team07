@@ -10,7 +10,7 @@ import model.createAnAccount;
 public class createAnAccount_Person {
 
 	String user = "root";
-	String password = "ALuckyNugget7"; // put in your password to the MySQL Workbench database
+	String password = "password"; // put in your password to the MySQL Workbench database
 
 	public int registerAccount(createAnAccount createAccount) throws ClassNotFoundException {
 		String INSERT_CUSTOMERS_SQL = "INSERT INTO customers"
